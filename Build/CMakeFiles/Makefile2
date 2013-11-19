@@ -50,59 +50,74 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-10.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/Projects/CGTK
+CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/CGK
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/Projects/CGTK/Build
+CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/CGK/Build
 
 #=============================================================================
 # Directory level rules for directory Src
 
 # Convenience name for "all" pass in the directory.
-Src/all: Src/CMakeFiles/CGK.dir/all
+Src/all: Src/CGK/all
 .PHONY : Src/all
 
 # Convenience name for "clean" pass in the directory.
-Src/clean: Src/CMakeFiles/CGK.dir/clean
+Src/clean: Src/CGK/clean
 .PHONY : Src/clean
 
 # Convenience name for "preinstall" pass in the directory.
-Src/preinstall:
+Src/preinstall: Src/CGK/preinstall
 .PHONY : Src/preinstall
 
 #=============================================================================
-# Target rules for target Src/CMakeFiles/CGK.dir
+# Directory level rules for directory Src/CGK
+
+# Convenience name for "all" pass in the directory.
+Src/CGK/all: Src/CGK/CMakeFiles/CGK.dir/all
+.PHONY : Src/CGK/all
+
+# Convenience name for "clean" pass in the directory.
+Src/CGK/clean: Src/CGK/CMakeFiles/CGK.dir/clean
+.PHONY : Src/CGK/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Src/CGK/preinstall:
+.PHONY : Src/CGK/preinstall
+
+#=============================================================================
+# Target rules for target Src/CGK/CMakeFiles/CGK.dir
 
 # All Build rule for target.
-Src/CMakeFiles/CGK.dir/all:
-	$(MAKE) -f Src/CMakeFiles/CGK.dir/build.make Src/CMakeFiles/CGK.dir/depend
-	$(MAKE) -f Src/CMakeFiles/CGK.dir/build.make Src/CMakeFiles/CGK.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGTK/Build/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+Src/CGK/CMakeFiles/CGK.dir/all:
+	$(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/depend
+	$(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 	@echo "Built target CGK"
-.PHONY : Src/CMakeFiles/CGK.dir/all
+.PHONY : Src/CGK/CMakeFiles/CGK.dir/all
 
 # Include target in all.
-all: Src/CMakeFiles/CGK.dir/all
+all: Src/CGK/CMakeFiles/CGK.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Src/CMakeFiles/CGK.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/Projects/CGTK/Build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 Src/CMakeFiles/CGK.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/Projects/CGTK/Build/CMakeFiles 0
-.PHONY : Src/CMakeFiles/CGK.dir/rule
+Src/CGK/CMakeFiles/CGK.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/CGK/Build/CMakeFiles 15
+	$(MAKE) -f CMakeFiles/Makefile2 Src/CGK/CMakeFiles/CGK.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/CGK/Build/CMakeFiles 0
+.PHONY : Src/CGK/CMakeFiles/CGK.dir/rule
 
 # Convenience name for target.
-CGK: Src/CMakeFiles/CGK.dir/rule
+CGK: Src/CGK/CMakeFiles/CGK.dir/rule
 .PHONY : CGK
 
 # clean rule for target.
-Src/CMakeFiles/CGK.dir/clean:
-	$(MAKE) -f Src/CMakeFiles/CGK.dir/build.make Src/CMakeFiles/CGK.dir/clean
-.PHONY : Src/CMakeFiles/CGK.dir/clean
+Src/CGK/CMakeFiles/CGK.dir/clean:
+	$(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/clean
+.PHONY : Src/CGK/CMakeFiles/CGK.dir/clean
 
 # clean rule for target.
-clean: Src/CMakeFiles/CGK.dir/clean
+clean: Src/CGK/CMakeFiles/CGK.dir/clean
 .PHONY : clean
 
 #=============================================================================

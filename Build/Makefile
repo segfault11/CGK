@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-10.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/Projects/CGTK
+CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/CGK
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/Projects/CGTK/Build
+CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/CGK/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -113,9 +113,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/Projects/CGTK/Build/CMakeFiles /Users/scatterbrain/Documents/Projects/CGTK/Build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/CGK/Build/CMakeFiles /Users/scatterbrain/Documents/CGK/Build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/Projects/CGTK/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/CGK/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -152,7 +152,7 @@ CGK: cmake_check_build_system
 
 # fast build rule for target.
 CGK/fast:
-	$(MAKE) -f Src/CMakeFiles/CGK.dir/build.make Src/CMakeFiles/CGK.dir/build
+	$(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/build
 .PHONY : CGK/fast
 
 # Help Target
