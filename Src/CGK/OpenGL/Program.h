@@ -26,7 +26,7 @@ void CGKOpenGLProgramLink(
 
 /// Sets a uniform Mat4 variable identified by [name] in the glsl object.
 /// NOTE: THE GLSL OBJECT SHOULD BE BOUND BEFORE USING THIS FUNCTION.
-void CGKOpenGLProgramUniformMatrix4F(
+void CGKOpenGLProgramUniformMatrix4f(
     GLuint program,
     const char* name, 
     const GLfloat* value, 
@@ -35,7 +35,7 @@ void CGKOpenGLProgramUniformMatrix4F(
 
 /// Sets a uniform int variable identified by [name] in the glsl object.
 /// NOTE: THE GLSL OBJECT SHOULD BE BOUND BEFORE USING THIS FUNCTION.
-void CGKOpenGLProgramUniform1I(
+void CGKOpenGLProgramUniform1i(
     GLuint program,
     const char* name, 
     GLint value

@@ -7,6 +7,7 @@
 /usr/include/CGK/App/UI/Label.h
 /usr/include/CGK/Error/Error.h
 /usr/include/CGK/Math/Matrix4.h
+/usr/include/CGK/Math/Ray3.h
 /usr/include/CGK/Math/Tuple.h
 /usr/include/CGK/Math/Vector2.h
 /usr/include/CGK/Math/Vector3.h

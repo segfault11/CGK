@@ -26,22 +26,22 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Applications/CMake 2.8-10.app/Contents/bin/cmake"
+CMAKE_COMMAND = /opt/local/bin/cmake
 
 # The command to remove a file.
-RM = "/Applications/CMake 2.8-10.app/Contents/bin/cmake" -E remove -f
+RM = /opt/local/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-10.app/Contents/bin/ccmake"
+CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/CGK
+CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/Projects/CGK
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/CGK/Build
+CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/Projects/CGK/Build
 
 # Include any dependencies generated for this target.
 include Src/CGK/CMakeFiles/CGK.dir/depend.make
@@ -54,17 +54,17 @@ include Src/CGK/CMakeFiles/CGK.dir/flags.make
 
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/Application.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/App/Application.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/Application.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/App/Application.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/Application.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/Application.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/App/Application.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/App/Application.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/App/Application.cpp > CMakeFiles/CGK.dir/App/Application.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/Application.cpp > CMakeFiles/CGK.dir/App/Application.i
 
 Src/CGK/CMakeFiles/CGK.dir/App/Application.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/App/Application.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/App/Application.cpp -o CMakeFiles/CGK.dir/App/Application.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/Application.cpp -o CMakeFiles/CGK.dir/App/Application.s
 
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/App/Application.o.requires
@@ -77,17 +77,17 @@ Src/CGK/CMakeFiles/CGK.dir/App/Application.o.provides.build: Src/CGK/CMakeFiles/
 
 Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/App/Camera.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/App/Camera.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/Camera.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/App/Camera.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/Camera.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/Camera.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/App/Camera.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/App/Camera.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/App/Camera.cpp > CMakeFiles/CGK.dir/App/Camera.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/Camera.cpp > CMakeFiles/CGK.dir/App/Camera.i
 
 Src/CGK/CMakeFiles/CGK.dir/App/Camera.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/App/Camera.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/App/Camera.cpp -o CMakeFiles/CGK.dir/App/Camera.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/Camera.cpp -o CMakeFiles/CGK.dir/App/Camera.s
 
 Src/CGK/CMakeFiles/CGK.dir/App/Camera.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/App/Camera.o.requires
@@ -100,17 +100,17 @@ Src/CGK/CMakeFiles/CGK.dir/App/Camera.o.provides.build: Src/CGK/CMakeFiles/CGK.d
 
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o: ../Src/CGK/App/IEventHandler.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/IEventHandler.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/App/IEventHandler.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/IEventHandler.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IEventHandler.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/App/IEventHandler.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/App/IEventHandler.cpp > CMakeFiles/CGK.dir/App/IEventHandler.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IEventHandler.cpp > CMakeFiles/CGK.dir/App/IEventHandler.i
 
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/App/IEventHandler.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/App/IEventHandler.cpp -o CMakeFiles/CGK.dir/App/IEventHandler.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IEventHandler.cpp -o CMakeFiles/CGK.dir/App/IEventHandler.s
 
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o.requires
@@ -123,17 +123,17 @@ Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o.provides.build: Src/CGK/CMakeFile
 
 Src/CGK/CMakeFiles/CGK.dir/App/IObject.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/App/IObject.o: ../Src/CGK/App/IObject.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/App/IObject.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/IObject.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/App/IObject.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/IObject.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IObject.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/App/IObject.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/App/IObject.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/App/IObject.cpp > CMakeFiles/CGK.dir/App/IObject.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IObject.cpp > CMakeFiles/CGK.dir/App/IObject.i
 
 Src/CGK/CMakeFiles/CGK.dir/App/IObject.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/App/IObject.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/App/IObject.cpp -o CMakeFiles/CGK.dir/App/IObject.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IObject.cpp -o CMakeFiles/CGK.dir/App/IObject.s
 
 Src/CGK/CMakeFiles/CGK.dir/App/IObject.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/App/IObject.o.requires
@@ -146,17 +146,17 @@ Src/CGK/CMakeFiles/CGK.dir/App/IObject.o.provides.build: Src/CGK/CMakeFiles/CGK.
 
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/UI/Label.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/UI/Label.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/App/UI/Label.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/App/UI/Label.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/UI/Label.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/App/UI/Label.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/App/UI/Label.cpp > CMakeFiles/CGK.dir/App/UI/Label.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/UI/Label.cpp > CMakeFiles/CGK.dir/App/UI/Label.i
 
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/App/UI/Label.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/App/UI/Label.cpp -o CMakeFiles/CGK.dir/App/UI/Label.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/UI/Label.cpp -o CMakeFiles/CGK.dir/App/UI/Label.s
 
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o.requires
@@ -169,17 +169,17 @@ Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o.provides.build: Src/CGK/CMakeFiles/CGK
 
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o: ../Src/CGK/Error/Error.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/Error/Error.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/Error/Error.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/Error/Error.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/Error/Error.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/Error/Error.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/Error/Error.cpp > CMakeFiles/CGK.dir/Error/Error.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.cpp > CMakeFiles/CGK.dir/Error/Error.i
 
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/Error/Error.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/Error/Error.cpp -o CMakeFiles/CGK.dir/Error/Error.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.cpp -o CMakeFiles/CGK.dir/Error/Error.s
 
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/Error/Error.o.requires
@@ -192,17 +192,17 @@ Src/CGK/CMakeFiles/CGK.dir/Error/Error.o.provides.build: Src/CGK/CMakeFiles/CGK.
 
 Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o: ../Src/CGK/Obj/Object.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/Obj/Object.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/Obj/Object.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/Obj/Object.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Obj/Object.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/Obj/Object.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/Obj/Object.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/Obj/Object.cpp > CMakeFiles/CGK.dir/Obj/Object.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Obj/Object.cpp > CMakeFiles/CGK.dir/Obj/Object.i
 
 Src/CGK/CMakeFiles/CGK.dir/Obj/Object.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/Obj/Object.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/Obj/Object.cpp -o CMakeFiles/CGK.dir/Obj/Object.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Obj/Object.cpp -o CMakeFiles/CGK.dir/Obj/Object.s
 
 Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o.requires
@@ -215,17 +215,17 @@ Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o.provides.build: Src/CGK/CMakeFiles/CGK.d
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o: ../Src/CGK/OpenGL/Program.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/OpenGL/Program.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/OpenGL/Program.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/OpenGL/Program.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/OpenGL/Program.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/OpenGL/Program.cpp > CMakeFiles/CGK.dir/OpenGL/Program.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.cpp > CMakeFiles/CGK.dir/OpenGL/Program.i
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/OpenGL/Program.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/OpenGL/Program.cpp -o CMakeFiles/CGK.dir/OpenGL/Program.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.cpp -o CMakeFiles/CGK.dir/OpenGL/Program.s
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o.requires
@@ -238,17 +238,17 @@ Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o.provides.build: Src/CGK/CMakeFiles/C
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o: ../Src/CGK/OpenGL/Texture.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/OpenGL/Texture.o -c /Users/scatterbrain/Documents/CGK/Src/CGK/OpenGL/Texture.cpp
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CGK.dir/OpenGL/Texture.o -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Texture.cpp
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGK.dir/OpenGL/Texture.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/OpenGL/Texture.cpp > CMakeFiles/CGK.dir/OpenGL/Texture.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Texture.cpp > CMakeFiles/CGK.dir/OpenGL/Texture.i
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGK.dir/OpenGL/Texture.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/OpenGL/Texture.cpp -o CMakeFiles/CGK.dir/OpenGL/Texture.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Texture.cpp -o CMakeFiles/CGK.dir/OpenGL/Texture.s
 
 Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o.requires
@@ -261,17 +261,17 @@ Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o.provides.build: Src/CGK/CMakeFiles/C
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o: ../Src/CGK/External/SOIL/image_DXT.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/image_DXT.o   -c /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/image_DXT.c
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/image_DXT.o   -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/image_DXT.c
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CGK.dir/External/SOIL/image_DXT.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/image_DXT.c > CMakeFiles/CGK.dir/External/SOIL/image_DXT.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/image_DXT.c > CMakeFiles/CGK.dir/External/SOIL/image_DXT.i
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CGK.dir/External/SOIL/image_DXT.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/image_DXT.c -o CMakeFiles/CGK.dir/External/SOIL/image_DXT.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/image_DXT.c -o CMakeFiles/CGK.dir/External/SOIL/image_DXT.s
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o.requires
@@ -284,17 +284,17 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o.provides.build: Src/CGK/CMa
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o: ../Src/CGK/External/SOIL/image_helper.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/image_helper.o   -c /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/image_helper.c
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/image_helper.o   -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/image_helper.c
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CGK.dir/External/SOIL/image_helper.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/image_helper.c > CMakeFiles/CGK.dir/External/SOIL/image_helper.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/image_helper.c > CMakeFiles/CGK.dir/External/SOIL/image_helper.i
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CGK.dir/External/SOIL/image_helper.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/image_helper.c -o CMakeFiles/CGK.dir/External/SOIL/image_helper.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/image_helper.c -o CMakeFiles/CGK.dir/External/SOIL/image_helper.s
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o.requires
@@ -307,17 +307,17 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o.provides.build: Src/CGK/
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o: ../Src/CGK/External/SOIL/original/stb_image-1.09.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o   -c /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/original/stb_image-1.09.c
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o   -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/original/stb_image-1.09.c
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/original/stb_image-1.09.c > CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/original/stb_image-1.09.c > CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.i
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/original/stb_image-1.09.c -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/original/stb_image-1.09.c -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.s
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o.requires
@@ -330,17 +330,17 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o.provides.buil
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o: ../Src/CGK/External/SOIL/original/stb_image-1.16.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o   -c /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/original/stb_image-1.16.c
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o   -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/original/stb_image-1.16.c
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/original/stb_image-1.16.c > CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/original/stb_image-1.16.c > CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.i
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/original/stb_image-1.16.c -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/original/stb_image-1.16.c -o CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.s
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o.requires
@@ -353,17 +353,17 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o.provides.buil
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o: ../Src/CGK/External/SOIL/SOIL.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/SOIL.o   -c /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/SOIL.c
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/SOIL.o   -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/SOIL.c
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CGK.dir/External/SOIL/SOIL.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/SOIL.c > CMakeFiles/CGK.dir/External/SOIL/SOIL.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/SOIL.c > CMakeFiles/CGK.dir/External/SOIL/SOIL.i
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CGK.dir/External/SOIL/SOIL.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/SOIL.c -o CMakeFiles/CGK.dir/External/SOIL/SOIL.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/SOIL.c -o CMakeFiles/CGK.dir/External/SOIL/SOIL.s
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o.requires
@@ -376,17 +376,17 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o.provides.build: Src/CGK/CMakeFil
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o: Src/CGK/CMakeFiles/CGK.dir/flags.make
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o: ../Src/CGK/External/SOIL/stb_image_aug.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/scatterbrain/Documents/Projects/CGK/Build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o   -c /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/stb_image_aug.c
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o   -c /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/stb_image_aug.c
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.i"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/stb_image_aug.c > CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.i
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/stb_image_aug.c > CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.i
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.s"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/CGK/Src/CGK/External/SOIL/stb_image_aug.c -o CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.s
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/External/SOIL/stb_image_aug.c -o CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.s
 
 Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o.requires:
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o.requires
@@ -436,8 +436,8 @@ Src/CGK/libCGK.a: Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o
 Src/CGK/libCGK.a: Src/CGK/CMakeFiles/CGK.dir/build.make
 Src/CGK/libCGK.a: Src/CGK/CMakeFiles/CGK.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libCGK.a"
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && $(CMAKE_COMMAND) -P CMakeFiles/CGK.dir/cmake_clean_target.cmake
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CGK.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && $(CMAKE_COMMAND) -P CMakeFiles/CGK.dir/cmake_clean_target.cmake
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CGK.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Src/CGK/CMakeFiles/CGK.dir/build: Src/CGK/libCGK.a
@@ -461,10 +461,10 @@ Src/CGK/CMakeFiles/CGK.dir/requires: Src/CGK/CMakeFiles/CGK.dir/External/SOIL/st
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/requires
 
 Src/CGK/CMakeFiles/CGK.dir/clean:
-	cd /Users/scatterbrain/Documents/CGK/Build/Src/CGK && $(CMAKE_COMMAND) -P CMakeFiles/CGK.dir/cmake_clean.cmake
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK && $(CMAKE_COMMAND) -P CMakeFiles/CGK.dir/cmake_clean.cmake
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/clean
 
 Src/CGK/CMakeFiles/CGK.dir/depend:
-	cd /Users/scatterbrain/Documents/CGK/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/scatterbrain/Documents/CGK /Users/scatterbrain/Documents/CGK/Src/CGK /Users/scatterbrain/Documents/CGK/Build /Users/scatterbrain/Documents/CGK/Build/Src/CGK /Users/scatterbrain/Documents/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/scatterbrain/Documents/Projects/CGK /Users/scatterbrain/Documents/Projects/CGK/Src/CGK /Users/scatterbrain/Documents/Projects/CGK/Build /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK /Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/depend
 

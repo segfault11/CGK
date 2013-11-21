@@ -16,7 +16,7 @@
 // Defines accessors to an member variable of a class. 
 // (read and write)
 // NAME: Name after the Set and Get method (i.e. Set<NAME> Get<NAME>)
-// DATA_TYPE: Data type of the system
+// DATA_TYPE: Data type of the member
 // MEMBER_NAME: Name of the member
 #define DEF_MEMBER_RW(NAME, DATA_TYPE, MEMBER_NAME) \
     const DATA_TYPE & Get##NAME() {return MEMBER_NAME;} \

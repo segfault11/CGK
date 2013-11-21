@@ -129,7 +129,7 @@ void CGKOpenGLProgramLink(GLuint program)
     delete[] shaders;
 }
 //------------------------------------------------------------------------------
-void CGKOpenGLProgramUniformMatrix4F(
+void CGKOpenGLProgramUniformMatrix4f(
     GLuint program,
     const char* name, 
     const GLfloat* value, 
@@ -141,7 +141,7 @@ void CGKOpenGLProgramUniformMatrix4F(
     glUniformMatrix4fv(loc, 1, transpose, value);
 }
 //------------------------------------------------------------------------------
-void CGKOpenGLProgramUniform1I(
+void CGKOpenGLProgramUniform1i(
     GLuint program,
     const char* name, 
     GLint value

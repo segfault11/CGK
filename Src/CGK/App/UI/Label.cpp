@@ -24,7 +24,7 @@ struct CGKUIFont
     CGKVector2i Advances[128];
     CGKVector2i Bearings[128];
 };
-
+//------------------------------------------------------------------------------
 CGKUIFontRef CGKUIFontCreate(const char* filename, unsigned int size)
 {
     // check if we have an OpenGL context
@@ -53,7 +53,7 @@ CGKUIFontRef CGKUIFontCreate(const char* filename, unsigned int size)
 
     if (!(err == 0))
     {
-        CGK_REPORT("Application was not initialized", CGK_UNKNOWN_ERROR);
+        CGK_REPORT("Could not load font.", CGK_FILE_NOT_FOUND);
         return NULL;
     }
 
@@ -114,8 +114,9 @@ CGKUIFontRef CGKUIFontCreate(const char* filename, unsigned int size)
                 atlas[y*atlasWidth + x] = buffer[v*w + u];
             }
         }
+
         // save character info
-        font->BitmapWidths[i]  = w;
+        font->BitmapWidths[i] = w;
         font->AtlasOffXs[i] = marker;
         font->Advances[i] = CGKVector2i(g->advance.x >> 6, g->advance.y >> 6);
         font->Bearings[i] = CGKVector2i(g->bitmap_left, g->bitmap_top);
@@ -127,10 +128,6 @@ CGKUIFontRef CGKUIFontCreate(const char* filename, unsigned int size)
     // create and configure the texture atlas
     glGenTextures(1, &font->TexAtlas);
     glBindTexture(GL_TEXTURE_2D, font->TexAtlas);
-    glTexImage2D(
-        GL_TEXTURE_2D, 0, GL_R8, atlasWidth, atlasHeight, 
-        0, GL_RED, GL_UNSIGNED_BYTE, atlas
-    );
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -138,9 +135,15 @@ CGKUIFontRef CGKUIFontCreate(const char* filename, unsigned int size)
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     glPixelStorei(GL_PACK_ALIGNMENT, 4); // for saving the image as bmp.
 
+    glTexImage2D(
+        GL_TEXTURE_2D, 0, GL_R8, atlasWidth, atlasHeight, 
+        0, GL_RED, GL_UNSIGNED_BYTE, atlas
+    );
+
+
+
     CGK_ASSERT(GL_NO_ERROR == glGetError())
 
-    CGKOpenGLTexture2DSaveAsBMP("atlas.bmp", font->TexAtlas);
 
     // clean up
     delete[] atlas;
@@ -165,7 +168,7 @@ static const char* vertexShader =
         uniform int AtlasWidth;
         uniform int AtlasHeight;
 
-        in ivec4 GlyphData;  // x offset from the [Origin] and width of the glyph 
+        in vec4 GlyphData; // x offset from the [Origin] and width of the glyph 
 
         out VertexData
         {
@@ -179,8 +182,8 @@ static const char* vertexShader =
         void main()
         {
             // compute position in NDC
-            float posX = float(GlyphData.x)/ScreenWidth;
-            float posY = float(GlyphData.y)/ScreenHeight;
+            float posX = GlyphData.x/ScreenWidth;
+            float posY = GlyphData.y/ScreenHeight;
 
             posX = 2.0f*posX - 1.0f;
             posY = 2.0f*posY - 1.0f;
@@ -279,7 +282,8 @@ static const char* fragmentShader =
                     alpha*TextColor.z
                 );
 
-            FragOut = vec4(textColor, alpha);
+            FragOut = vec4(alpha, alpha, alpha, alpha);
+            //FragOut = vec4(1.0f, 0.0f, 0.0f, 1.0f);
         }
     );
 //------------------------------------------------------------------------------
@@ -295,6 +299,8 @@ public:
     );
 
     ~RealLabel();
+
+    void Draw();
 
 private:
     void setBuffer(const std::string& text);
@@ -340,9 +346,13 @@ CGKUILabel::RealLabel::RealLabel(
     );
 
     glBindAttribLocation(this->program, 0, "GlyphData");
-
+    glBindFragDataLocation(this->program, 0, "FragOut");
     CGKOpenGLProgramLink(this->program);
-
+    glUseProgram(this->program);
+    CGKOpenGLProgramUniform1i(this->program, "AtlasWidth", font->TexWidth);
+    CGKOpenGLProgramUniform1i(this->program, "AtlasHeight", font->TexHeight);
+    CGKOpenGLProgramUniform1i(this->program, "Atlas", 0);
+    
     // geometry
     glGenBuffers(1, &this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
@@ -390,22 +400,47 @@ void CGKUILabel::RealLabel::setBuffer(const std::string& text)
         glyphData[4*i + 1] = posY + this->font->Bearings[(int)c].GetY();
         glyphData[4*i + 2] = this->font->BitmapWidths[(int)c];
         glyphData[4*i + 3] = this->font->AtlasOffXs[(int)c];
-        posX += posX + this->font->Bearings[(int)c].GetX();
-        posY += posX + this->font->Bearings[(int)c].GetY();
+        std::cout << "[" << posX << " " << posY << "]" << std::endl;
+        posX += this->font->Advances[(int)c].GetX();
+        posY += this->font->Advances[(int)c].GetY();
     } 
 
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
 
-    if (this->text.size() >= text.size())
-    {
-        glBufferSubData(GL_ARRAY_BUFFER, 0, size, glyphData);
-    }
-    else
+//    if (this->text.size() >= text.size())
+//    {
+//        glBufferSubData(GL_ARRAY_BUFFER, 0, size, glyphData);
+//    }
+//    else
     {
         glBufferData(GL_ARRAY_BUFFER, size, glyphData, GL_STATIC_DRAW);
     }
+    
+    CGK_ASSERT( GL_NO_ERROR == glGetError() )
 
     delete[] glyphData;
+}
+//------------------------------------------------------------------------------
+void CGKUILabel::RealLabel::Draw()
+{
+    glUseProgram(this->program);
+    
+    CGKOpenGLProgramUniform1i(
+        this->program, 
+        "ScreenWidth", 
+        CGKAppGetScreenWidth()
+    );
+    
+    CGKOpenGLProgramUniform1i(
+        this->program, 
+        "ScreenHeight", 
+        CGKAppGetScreenHeight()
+    );
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, this->font->TexAtlas);
+    glBindVertexArray(this->vertexArray);
+    glDrawArrays(GL_POINTS, 0, this->text.size());
 }
 //------------------------------------------------------------------------------
 CGKUILabel::CGKUILabel(
@@ -416,12 +451,176 @@ CGKUILabel::CGKUILabel(
     const CGKVector3f& bgCol
 )
 {
-
+    this->label = new RealLabel(pos, text, font, fontCol, bgCol);
+//    this->drawer = new AtlasDrawer(font);
 }
 //------------------------------------------------------------------------------
 CGKUILabel::~CGKUILabel()
 {
-
-    
+    if (this->label) 
+    {
+        delete this->label;
+    }    
 }
 //------------------------------------------------------------------------------
+void CGKUILabel::Draw()
+{
+//    this->drawer->Draw();
+    if (this->label)
+    {
+        this->label->Draw();
+    }
+}
+//------------------------------------------------------------------------------
+
+
+
+
+static const char* vShader = 
+    "#version 150\n"
+    TO_STRING(
+    
+    uniform int ScreenWidth;
+    uniform int ScreenHeight;
+
+    in vec2 Position;
+    in vec2 TexCoord;    
+
+    out vec2 TexC;
+
+    void main()
+    {
+        TexC = TexCoord;
+
+        float x = Position.x/float(ScreenWidth); 
+        float y = Position.y/float(ScreenHeight); 
+        
+        x = 2.0f*x - 1.0f;
+        y = 2.0f*y - 1.0f;
+
+        gl_Position = vec4(x, y, 0.0f, 1.0f);
+        //gl_Position = vec4(TexCoord.x, TexCoord.y, 0.0f, 1.0f);
+        //gl_Position = vec4(0.0f, 0.0f, 0.0f, 1.0f);
+    }    
+
+
+    );
+
+static const char* fShader = 
+    "#version 150\n"
+    TO_STRING(
+
+    uniform sampler2D Atlas;
+    in vec2 TexC;
+    
+    out vec4 FragOut;
+
+    void main()
+    {
+        float a = texture(Atlas, TexC).r;
+        FragOut = vec4(a, a, a, 1.0f);
+        //FragOut = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+    }    
+
+
+    );
+
+
+
+
+AtlasDrawer::AtlasDrawer(CGKUIFontRef font)
+: font(font)
+{
+    this->program = glCreateProgram();
+    CGKOpenGLProgramAttachShaderFromSource(program, GL_VERTEX_SHADER, vShader);
+    CGKOpenGLProgramAttachShaderFromSource(program, GL_FRAGMENT_SHADER, fShader);
+    glBindAttribLocation(program, 0, "Position");
+    glBindAttribLocation(program, 1, "TexCoord");
+    glBindFragDataLocation(program, 0, "FragOut");
+    CGKOpenGLProgramLink(program);
+    glUseProgram(this->program);
+    CGKOpenGLProgramUniform1i(this->program, "Atlas", 0);
+    CGKOpenGLProgramUniform1i(this->program, "ScreenWidth", CGKAppGetScreenWidth());
+    CGKOpenGLProgramUniform1i(this->program, "ScreenHeight", CGKAppGetScreenHeight());
+ 
+    float pos[] = {
+            10.0f, 10.0f,
+            (float)font->TexWidth, 10.0f,
+            (float)font->TexWidth, (float)font->TexHeight,
+            10.0f, 10.0f,
+            (float)font->TexWidth, (float)font->TexHeight,
+            10.0f, (float)font->TexHeight,
+        };
+
+    float tc[] = {
+        0.0f, 0.0f,
+        1.0f, 0.0f,
+        1.0f, 1.0f,
+        0.0f, 0.0f,
+        1.0f, 1.0f,
+        0.0f, 1.0f
+    };
+
+    glGenBuffers(1, &this->buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(pos), pos, GL_STATIC_DRAW);
+    glGenBuffers(1, &this->tcBuffer);
+
+    CGK_ASSERT( this->tcBuffer != 0 )
+
+    glBindBuffer(GL_ARRAY_BUFFER, this->tcBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(tc), tc, GL_STATIC_DRAW);
+
+    std::cout << "sizeof(tc) =  " << sizeof(tc) << std::endl;
+
+    glGenVertexArrays(1, &this->vertexArray);
+    glBindVertexArray(this->vertexArray);
+    glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    glBindBuffer(GL_ARRAY_BUFFER, this->tcBuffer);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+    glGenTextures(1, &this->tex);
+    glBindTexture(GL_TEXTURE_2D, this->tex);
+
+//    unsigned int len = this->font->TexWidth*this->font->TexHeight;
+//    unsigned char* data = new unsigned char[len];
+//
+//    for (int i = 0; i < len; i++) 
+//    {
+//        data[i] = 100;
+//    }
+//    
+//    glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, this->font->TexWidth, this->font->TexHeight, 0, GL_RED, GL_UNSIGNED_BYTE, data); 
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    this->tex = CGKOpenGLTexture2DCreateFromFile("atlas.bmp");
+    
+
+    CGK_ASSERT( GL_NO_ERROR == glGetError() )
+}
+AtlasDrawer::~AtlasDrawer()
+{
+
+}
+
+void AtlasDrawer::Draw()
+{
+    glUseProgram(this->program);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, this->font->TexAtlas);
+//    glBindTexture(GL_TEXTURE_2D, this->tex);
+    glBindVertexArray(this->vertexArray);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+
+    CGK_ASSERT( GL_NO_ERROR == glGetError() )
+}
+
+
+
+
