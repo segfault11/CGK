@@ -44,5 +44,16 @@ void CGKOpenGLProgramUniform1i(
     const char* name, 
     GLint value
 );
+
+
+/// Sets a uniform vec3 variable identified by [name] in the glsl object.
+/// NOTE: THE GLSL OBJECT SHOULD BE BOUND BEFORE USING THIS FUNCTION.
+void CGKOpenGLProgramUniform3f(
+    GLuint program,
+    const char* name, 
+    GLfloat v0,
+    GLfloat v1,
+    GLfloat v2
+);
  
 #endif /* end of include guard: PROGRAM_H__ */

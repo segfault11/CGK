@@ -282,8 +282,8 @@ static const char* fragmentShader =
                     alpha*TextColor.z
                 );
 
-            FragOut = vec4(alpha, alpha, alpha, alpha);
-            //FragOut = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+           // FragOut = vec4(alpha, alpha, alpha, alpha);
+            FragOut = vec4(TextColor, alpha);
         }
     );
 //------------------------------------------------------------------------------
@@ -301,6 +301,8 @@ public:
     ~RealLabel();
 
     void Draw();
+    void SetText(const std::string& text);    
+    void SetFontColor(const CGKVector3f& color);
 
 private:
     void setBuffer(const std::string& text);
@@ -308,11 +310,14 @@ private:
     CGKVector2i position;
     std::string text;
     CGKUIFontRef font;
+    CGKVector3f fontColor;
+    CGKVector3f bgColor;
 
     GLuint buffer;
     GLuint vertexArray;
-    GLuint program;
+    static GLuint program;
 };
+GLuint CGKUILabel::RealLabel::program = 0;
 //------------------------------------------------------------------------------
 CGKUILabel::RealLabel::RealLabel(
     const CGKVector2i& pos,
@@ -321,38 +326,37 @@ CGKUILabel::RealLabel::RealLabel(
     const CGKVector3f& fontCol, 
     const CGKVector3f& bgCol
 )
-: position(pos), text(text), font(font)
+: position(pos), text(text), font(font), fontColor(fontCol), bgColor(bgCol)
 {
     // program
-    this->program = glCreateProgram();
-    CGK_ASSERT(this->program);
+    if (!this->program)
+    {
+        this->program = glCreateProgram();
+        CGK_ASSERT(this->program);
     
-    CGKOpenGLProgramAttachShaderFromSource(
-        this->program, 
-        GL_VERTEX_SHADER, 
-        vertexShader
-    );
-
-    CGKOpenGLProgramAttachShaderFromSource(
-        this->program, 
-        GL_GEOMETRY_SHADER, 
-        geometryShader
-    );
-
-    CGKOpenGLProgramAttachShaderFromSource(
-        this->program, 
-        GL_FRAGMENT_SHADER, 
-        fragmentShader
-    );
-
-    glBindAttribLocation(this->program, 0, "GlyphData");
-    glBindFragDataLocation(this->program, 0, "FragOut");
-    CGKOpenGLProgramLink(this->program);
-    glUseProgram(this->program);
-    CGKOpenGLProgramUniform1i(this->program, "AtlasWidth", font->TexWidth);
-    CGKOpenGLProgramUniform1i(this->program, "AtlasHeight", font->TexHeight);
-    CGKOpenGLProgramUniform1i(this->program, "Atlas", 0);
+        CGKOpenGLProgramAttachShaderFromSource(
+            this->program, 
+            GL_VERTEX_SHADER, 
+            vertexShader
+        );
     
+        CGKOpenGLProgramAttachShaderFromSource(
+            this->program, 
+            GL_GEOMETRY_SHADER, 
+            geometryShader
+        );
+    
+        CGKOpenGLProgramAttachShaderFromSource(
+            this->program, 
+            GL_FRAGMENT_SHADER, 
+            fragmentShader
+        );
+
+        glBindAttribLocation(this->program, 0, "GlyphData");
+        glBindFragDataLocation(this->program, 0, "FragOut");
+        CGKOpenGLProgramLink(this->program);
+    }    
+
     // geometry
     glGenBuffers(1, &this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
@@ -375,9 +379,23 @@ CGKUILabel::RealLabel::RealLabel(
 //------------------------------------------------------------------------------
 CGKUILabel::RealLabel::~RealLabel()
 {
-    glDeleteProgram(this->program);
+    if (this->program)
+    {
+        glDeleteProgram(this->program);
+        this->program = 0;
+    }
 }
 //------------------------------------------------------------------------------
+void CGKUILabel::RealLabel::SetText(const std::string& text)
+{
+    this->setBuffer(text);
+}
+//-----------------------------------------------------------------------------
+void CGKUILabel::RealLabel::SetFontColor(const CGKVector3f& color)
+{
+    this->fontColor = color;
+}
+//-----------------------------------------------------------------------------
 void CGKUILabel::RealLabel::setBuffer(const std::string& text)
 {
     unsigned int length = text.size();
@@ -400,30 +418,59 @@ void CGKUILabel::RealLabel::setBuffer(const std::string& text)
         glyphData[4*i + 1] = posY + this->font->Bearings[(int)c].GetY();
         glyphData[4*i + 2] = this->font->BitmapWidths[(int)c];
         glyphData[4*i + 3] = this->font->AtlasOffXs[(int)c];
-        std::cout << "[" << posX << " " << posY << "]" << std::endl;
+
         posX += this->font->Advances[(int)c].GetX();
         posY += this->font->Advances[(int)c].GetY();
     } 
 
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
 
-//    if (this->text.size() >= text.size())
-//    {
-//        glBufferSubData(GL_ARRAY_BUFFER, 0, size, glyphData);
-//    }
-//    else
+    if (this->text.size() >= text.size())
+    {
+        glBufferSubData(GL_ARRAY_BUFFER, 0, size, glyphData);
+    }
+    else
     {
         glBufferData(GL_ARRAY_BUFFER, size, glyphData, GL_STATIC_DRAW);
     }
     
     CGK_ASSERT( GL_NO_ERROR == glGetError() )
-
+    
+    this->text = text;
+    
     delete[] glyphData;
 }
 //------------------------------------------------------------------------------
 void CGKUILabel::RealLabel::Draw()
 {
+    bool depthTestWasEnabled = false;
+    bool blendingWasEnabled = true;
+
+    if (glIsEnabled(GL_DEPTH_TEST))
+    {
+        glDisable(GL_DEPTH_TEST);
+        depthTestWasEnabled = true;
+    }
+    
+    if (!glIsEnabled(GL_BLEND))
+    {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        blendingWasEnabled = false; 
+    }
+
     glUseProgram(this->program);
+    CGKOpenGLProgramUniform1i(this->program, "AtlasWidth", font->TexWidth);
+    CGKOpenGLProgramUniform1i(this->program, "AtlasHeight", font->TexHeight);
+    CGKOpenGLProgramUniform1i(this->program, "Atlas", 0);
+
+    CGKOpenGLProgramUniform3f(
+        this->program, 
+        "TextColor", 
+        this->fontColor[0], 
+        this->fontColor[1], 
+        this->fontColor[2]
+    );
     
     CGKOpenGLProgramUniform1i(
         this->program, 
@@ -441,6 +488,16 @@ void CGKUILabel::RealLabel::Draw()
     glBindTexture(GL_TEXTURE_2D, this->font->TexAtlas);
     glBindVertexArray(this->vertexArray);
     glDrawArrays(GL_POINTS, 0, this->text.size());
+
+    if (depthTestWasEnabled) 
+    {
+        glEnable(GL_DEPTH_TEST);
+    }
+
+    if (!blendingWasEnabled)
+    {
+        glDisable(GL_BLEND);
+    }
 }
 //------------------------------------------------------------------------------
 CGKUILabel::CGKUILabel(
@@ -462,6 +519,16 @@ CGKUILabel::~CGKUILabel()
     }    
 }
 //------------------------------------------------------------------------------
+void CGKUILabel::SetText(const std::string& text)
+{
+    this->label->SetText(text);
+}
+//-----------------------------------------------------------------------------
+void CGKUILabel::SetFontColor(const CGKVector3f& color)
+{
+    this->label->SetFontColor(color);
+}
+//-----------------------------------------------------------------------------
 void CGKUILabel::Draw()
 {
     if (this->label)

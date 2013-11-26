@@ -30,7 +30,16 @@ public:
         const CGKVector3f& bgCol
     );
     ~CGKUILabel();
+    
+    /// Sets the text of the label.
+    /// \param text Text of the label.
+    void SetText(const std::string& text);
 
+    /// Sets the color of the label.
+    /// \param color Color of the label.
+    void SetFontColor(const CGKVector3f& color);
+
+    /// Draws the label to the current framebuffer.
     void Draw();
 
 private:
