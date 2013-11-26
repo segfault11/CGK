@@ -1,5 +1,6 @@
-Computer Graphics Toolkit:
-A simple helper library For graphics related programs
+Computer Graphics Kit:
+======================
+A simple helper library for graphics related programs
 
 Features:
 - A subset of an .obj Loader
