@@ -1,1 +1,1 @@
-/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir
+/home/arno/Documents/CGK/Build/Src/CGK/CMakeFiles/CGK.dir

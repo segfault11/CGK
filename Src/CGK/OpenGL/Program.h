@@ -1,7 +1,11 @@
 #ifndef PROGRAM_H__
 #define PROGRAM_H__
- 
-#include <GL/GLEW.h>
+
+#ifdef __APPLE__ 
+    #include <GL/GLEW.h>
+#elif __linux
+    #include <GL/glew.h>
+#endif
 
 /// Attaches a shader to the program. The shader is defined by the c string
 /// [source] and is of type [type].

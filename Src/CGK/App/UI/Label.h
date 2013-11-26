@@ -18,31 +18,6 @@ CGKUIFontRef CGKUIFontCreate(const char* name, unsigned int size);
 /// Destroys a font.
 void CGKUIFontDestroy(CGKUIFontRef* font);
 
-
-
-// DELETE ME, I AM JUST FOR DEBUGGING
-#include <GL/GLEW.h>
-class AtlasDrawer
-{
-public:
-    AtlasDrawer(CGKUIFontRef font);
-    ~AtlasDrawer();
-
-    void Draw();
-
-private:
-    CGKUIFontRef font;
-    GLuint program;
-    GLuint vertexArray;
-    GLuint buffer;
-    GLuint tcBuffer;
-    GLuint tex;
-};
-
-
-
-
-
 class CGKUILabel : public CGKAppIDrawable
 {
 public:
@@ -61,8 +36,6 @@ public:
 private:
     class RealLabel;
     RealLabel* label;
-
-    AtlasDrawer* drawer;
 };
  
 #endif /* end of include guard: LABEL_H__ */
