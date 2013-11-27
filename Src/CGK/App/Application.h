@@ -16,7 +16,7 @@
 /// @param height height of the window.
 ///
 /// @since 2013-08-15 
-void CGKAppInit(
+void CGKAppCreate(
     const char* name, 
     unsigned int x, 
     unsigned int y, 

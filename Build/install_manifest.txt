@@ -11,6 +11,7 @@
 /usr/include/CGK/Math/Matrix4.h
 /usr/include/CGK/Math/Vector4.h
 /usr/include/CGK/Math/Ray3.h
+/usr/include/CGK/Math/Box3.h
 /usr/include/CGK/OpenGL/Program.h
 /usr/include/CGK/OpenGL/Texture.h
 /usr/include/CGK/Error/Error.h
@@ -18,6 +19,7 @@
 /usr/include/CGK/Obj/Object.h
 /usr/include/CGK/Math/Tuple.inl
 /usr/include/CGK/Math/Matrix4.inl
+/usr/include/CGK/Math/Box3.inl
 /usr/include/CGK/Math/Vector2.inl
 /usr/include/CGK/Math/Vector3.inl
 /usr/include/CGK/Math/Vector4.inl

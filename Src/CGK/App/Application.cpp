@@ -25,7 +25,7 @@ static CGKCamera camera_;
 static unsigned int screenWidth_;
 static unsigned int screenHeight_;
 //------------------------------------------------------------------------------
-void CGKAppInit(
+void CGKAppCreate(
     const char* name, 
     unsigned int x, 
     unsigned int y, 
