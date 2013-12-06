@@ -84,7 +84,7 @@ void CGKMatrix4<T>::MakeView(
 {
     CGKVector3<T> n = eye - f;
     n.Normalize();
-    
+
     CGKVector3<T> u = up.Cross(n);
     u.Normalize();
 
