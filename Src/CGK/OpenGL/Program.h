@@ -1,7 +1,11 @@
 #ifndef PROGRAM_H__
 #define PROGRAM_H__
- 
-#include <GL/GLEW.h>
+
+#ifdef __APPLE__ 
+    #include <GL/GLEW.h>
+#elif __linux
+    #include <GL/glew.h>
+#endif
 
 /// Attaches a shader to the program. The shader is defined by the c string
 /// [source] and is of type [type].
@@ -39,6 +43,17 @@ void CGKOpenGLProgramUniform1i(
     GLuint program,
     const char* name, 
     GLint value
+);
+
+
+/// Sets a uniform vec3 variable identified by [name] in the glsl object.
+/// NOTE: THE GLSL OBJECT SHOULD BE BOUND BEFORE USING THIS FUNCTION.
+void CGKOpenGLProgramUniform3f(
+    GLuint program,
+    const char* name, 
+    GLfloat v0,
+    GLfloat v1,
+    GLfloat v2
 );
  
 void CGKOpenGLProgramUniform1f(

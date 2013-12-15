@@ -13,8 +13,12 @@
 */
 #ifndef TEXTURE_H__
 #define TEXTURE_H__
- 
-#include <GL/GLEW.h>
+
+#ifdef __APPLE__ 
+    #include <GL/GLEW.h>
+#elif __linux
+    #include <GL/glew.h>
+#endif
 
 /// Creates an OpenGL 2D texture from an image file. The caller is 
 /// responsible to release the texture. The texture is default configured to

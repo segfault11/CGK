@@ -2,7 +2,13 @@
 #include "Application.h"
 #include "../Error/Error.h"
 #include <stdexcept>
-#include <GL/GLEW.h>
+
+#ifdef __APPLE__
+    #include <GL/GLEW.h>
+#elif __linux
+    #include <GL/glew.h>
+#endif
+
 #include <iostream>
 #include <SDL2/SDL.h>
 //------------------------------------------------------------------------------
@@ -19,7 +25,7 @@ static CGKCamera camera_;
 static unsigned int screenWidth_;
 static unsigned int screenHeight_;
 //------------------------------------------------------------------------------
-void CGKAppInit(
+void CGKAppCreate(
     const char* name, 
     unsigned int x, 
     unsigned int y, 
@@ -49,13 +55,13 @@ void CGKAppInit(
             name,
             0, 0, 
             width, height, 
-            SDL_WINDOW_SHOWN
+            SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN
         );
 
     if (window_ == NULL)
     {
         SDL_Quit();
-        throw std::runtime_error(SDL_GetError());
+        CGK_REPORT( "Could not create window", CGK_UNKNOWN_ERROR )
     }
 
     // create an OpenGL context
@@ -65,7 +71,7 @@ void CGKAppInit(
     {
         SDL_DestroyWindow(window_);
         SDL_Quit();
-        throw std::runtime_error(SDL_GetError());
+        CGK_REPORT( "Could not create window", CGK_UNKNOWN_ERROR )
     }
 
     // set up GLEW
