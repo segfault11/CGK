@@ -5,6 +5,8 @@
 /usr/include/CGK/App/IEventHandler.h
 /usr/include/CGK/App/IObject.h
 /usr/include/CGK/App/UI/Label.h
+/usr/include/CGK/Config/ConfigEntry.h
+/usr/include/CGK/Config/ConfigFile.h
 /usr/include/CGK/Error/Error.h
 /usr/include/CGK/Math/Matrix4.h
 /usr/include/CGK/Math/Ray3.h

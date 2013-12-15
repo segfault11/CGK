@@ -232,6 +232,36 @@ App/UI/Label.s:
 .PHONY : App/UI/Label.s
 
 # target to build an object file
+Config/ConfigEntry.o:
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o
+.PHONY : Config/ConfigEntry.o
+
+# target to preprocess a source file
+Config/ConfigEntry.i:
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.i
+.PHONY : Config/ConfigEntry.i
+
+# target to generate assembly for a file
+Config/ConfigEntry.s:
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.s
+.PHONY : Config/ConfigEntry.s
+
+# target to build an object file
+Config/ConfigFile.o:
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o
+.PHONY : Config/ConfigFile.o
+
+# target to preprocess a source file
+Config/ConfigFile.i:
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.i
+.PHONY : Config/ConfigFile.i
+
+# target to generate assembly for a file
+Config/ConfigFile.s:
+	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.s
+.PHONY : Config/ConfigFile.s
+
+# target to build an object file
 Error/Error.o:
 	cd /Users/scatterbrain/Documents/Projects/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.o
 .PHONY : Error/Error.o
@@ -409,6 +439,12 @@ help:
 	@echo "... App/UI/Label.o"
 	@echo "... App/UI/Label.i"
 	@echo "... App/UI/Label.s"
+	@echo "... Config/ConfigEntry.o"
+	@echo "... Config/ConfigEntry.i"
+	@echo "... Config/ConfigEntry.s"
+	@echo "... Config/ConfigFile.o"
+	@echo "... Config/ConfigFile.i"
+	@echo "... Config/ConfigFile.s"
 	@echo "... Error/Error.o"
 	@echo "... Error/Error.i"
 	@echo "... Error/Error.s"

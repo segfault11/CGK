@@ -4,6 +4,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/CGK.dir/App/IEventHandler.o"
   "CMakeFiles/CGK.dir/App/IObject.o"
   "CMakeFiles/CGK.dir/App/UI/Label.o"
+  "CMakeFiles/CGK.dir/Config/ConfigEntry.o"
+  "CMakeFiles/CGK.dir/Config/ConfigFile.o"
   "CMakeFiles/CGK.dir/Error/Error.o"
   "CMakeFiles/CGK.dir/Obj/Object.o"
   "CMakeFiles/CGK.dir/OpenGL/Program.o"

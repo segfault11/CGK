@@ -79,6 +79,13 @@ Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o
  /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.h
  /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Texture.h
  /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Util.h
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o
+ /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigEntry.cpp
+ /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigEntry.h
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o
+ /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigEntry.h
+ /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigFile.cpp
+ /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigFile.h
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o
  /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.cpp
  /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.h

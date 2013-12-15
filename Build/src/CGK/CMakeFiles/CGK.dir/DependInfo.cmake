@@ -19,6 +19,8 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IEventHandler.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o"
   "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/IObject.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/IObject.o"
   "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/App/UI/Label.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o"
+  "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigEntry.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o"
+  "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Config/ConfigFile.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o"
   "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Error/Error.o"
   "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Obj/Object.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o"
   "/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.cpp" "/Users/scatterbrain/Documents/Projects/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o"

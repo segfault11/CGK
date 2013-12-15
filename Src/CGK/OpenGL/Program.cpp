@@ -152,3 +152,26 @@ void CGKOpenGLProgramUniform1i(
     glUniform1i(loc, value);
 }
 //------------------------------------------------------------------------------
+void CGKOpenGLProgramUniform1f(
+    GLuint program,
+    const char* name, 
+    GLfloat value
+)
+{
+    GLint loc = glGetUniformLocation(program, name);
+    CGK_ASSERT(loc != -1)
+    glUniform1f(loc, value);
+}
+//-----------------------------------------------------------------------------
+void CGKOpenGLProgramUniform2f(
+    GLuint program,
+    const char* name, 
+	GLfloat v0,
+    GLfloat v1
+)
+{
+    GLint loc = glGetUniformLocation(program, name);
+    CGK_ASSERT(loc != -1)
+    glUniform2f(loc, v0, v1);
+}
+//-----------------------------------------------------------------------------

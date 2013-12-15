@@ -128,6 +128,24 @@ Vector4.inl
 
 /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Math/Vector4.inl
 
+/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.cpp
+sstream
+-
+Program.h
+/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.h
+../Error/Error.h
+/Users/scatterbrain/Documents/Projects/CGK/Src/CGK/Error/Error.h
+iostream
+-
+fstream
+-
+streambuf
+-
+string
+-
+cerrno
+-
+
 /Users/scatterbrain/Documents/Projects/CGK/Src/CGK/OpenGL/Program.h
 GL/GLEW.h
 -

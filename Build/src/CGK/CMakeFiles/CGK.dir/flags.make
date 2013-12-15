@@ -7,7 +7,7 @@ C_FLAGS =
 
 C_DEFINES = 
 
-CXX_FLAGS =  
+CXX_FLAGS = -std=c++11 -Wall  
 
 CXX_DEFINES = 
 

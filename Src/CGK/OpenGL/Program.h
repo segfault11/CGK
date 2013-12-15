@@ -41,4 +41,17 @@ void CGKOpenGLProgramUniform1i(
     GLint value
 );
  
+void CGKOpenGLProgramUniform1f(
+    GLuint program,
+    const char* name, 
+    GLfloat value
+);
+
+void CGKOpenGLProgramUniform2f(
+    GLuint program,
+    const char* name, 
+	GLfloat v0,
+    GLfloat v1
+);
+
 #endif /* end of include guard: PROGRAM_H__ */

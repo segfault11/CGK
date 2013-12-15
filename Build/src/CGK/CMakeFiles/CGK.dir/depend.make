@@ -79,6 +79,13 @@ Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/OpenGL/Program.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/OpenGL/Texture.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Util.h
 
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o: ../Src/CGK/Config/ConfigEntry.cpp
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o: ../Src/CGK/Config/ConfigEntry.h
+
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigEntry.h
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigFile.cpp
+Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigFile.h
+
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o: ../Src/CGK/Error/Error.cpp
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o: ../Src/CGK/Error/Error.h
 
