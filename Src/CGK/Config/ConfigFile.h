@@ -3,6 +3,7 @@
 
 #include <string>
 #include "ConfigEntry.h"
+#include "ConfigGroup.h"
 
 class CGKConfigFile 
 {
@@ -12,9 +13,13 @@ public:
 
     unsigned int GetNumEntries() const;
 
+	/// Gets the first ConfigGroup with the name [name]. Returns NULL if there
+	/// are no entries that have name [name].
+	const CGKConfigGroup* GetGroupWithName(const std::string& name) const;	
+
     /// Gets the first ConfigEntry with name [name]. Returns NULL if there
     /// are no entries that have name [name].
-    const CGKConfigEntry* GetEntryWithName(const std::string name) const;
+    const CGKConfigEntry* GetEntryWithName(const std::string& name) const;
     
     // Gets the entry at [index] position or NULL if [index] is greater or
     // equal to the total number or entries.    

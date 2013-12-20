@@ -30,24 +30,30 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/local/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /opt/local/bin/cmake -E remove -f
+
+# Escaping for special characters.
+EQUALS = =
+
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arno/Documents/CGK
+CMAKE_SOURCE_DIR = /Users/scatterbrain/Documents/Projects/Private/CGK
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arno/Documents/CGK/Build
+CMAKE_BINARY_DIR = /Users/scatterbrain/Documents/Projects/Private/CGK/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/opt/local/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -57,19 +63,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
+	/opt/local/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
+	/opt/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/opt/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -79,7 +85,7 @@ install/local/fast: install/local
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/opt/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -98,7 +104,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,14 +113,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/arno/Documents/CGK/Build && $(CMAKE_COMMAND) -E cmake_progress_start /home/arno/Documents/CGK/Build/CMakeFiles /home/arno/Documents/CGK/Build/Src/CGK/CMakeFiles/progress.marks
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arno/Documents/CGK/Build/CMakeFiles 0
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/Projects/Private/CGK/Build/CMakeFiles /Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/progress.marks
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scatterbrain/Documents/Projects/Private/CGK/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/clean
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/clean
 .PHONY : clean
 
 # The main clean target
@@ -123,22 +129,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/preinstall
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/preinstall
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/arno/Documents/CGK/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Src/CGK/CMakeFiles/CGK.dir/rule:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/CMakeFiles/CGK.dir/rule
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f CMakeFiles/Makefile2 Src/CGK/CMakeFiles/CGK.dir/rule
 .PHONY : Src/CGK/CMakeFiles/CGK.dir/rule
 
 # Convenience name for target.
@@ -147,232 +153,292 @@ CGK: Src/CGK/CMakeFiles/CGK.dir/rule
 
 # fast build rule for target.
 CGK/fast:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/build
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/build
 .PHONY : CGK/fast
 
 # target to build an object file
 App/Application.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Application.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Application.o
 .PHONY : App/Application.o
 
 # target to preprocess a source file
 App/Application.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Application.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Application.i
 .PHONY : App/Application.i
 
 # target to generate assembly for a file
 App/Application.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Application.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Application.s
 .PHONY : App/Application.s
 
 # target to build an object file
 App/Camera.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.o
 .PHONY : App/Camera.o
 
 # target to preprocess a source file
 App/Camera.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.i
 .PHONY : App/Camera.i
 
 # target to generate assembly for a file
 App/Camera.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.s
 .PHONY : App/Camera.s
 
 # target to build an object file
 App/IEventHandler.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o
 .PHONY : App/IEventHandler.o
 
 # target to preprocess a source file
 App/IEventHandler.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.i
 .PHONY : App/IEventHandler.i
 
 # target to generate assembly for a file
 App/IEventHandler.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.s
 .PHONY : App/IEventHandler.s
 
 # target to build an object file
 App/IObject.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IObject.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IObject.o
 .PHONY : App/IObject.o
 
 # target to preprocess a source file
 App/IObject.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IObject.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IObject.i
 .PHONY : App/IObject.i
 
 # target to generate assembly for a file
 App/IObject.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IObject.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IObject.s
 .PHONY : App/IObject.s
 
 # target to build an object file
 App/UI/Label.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o
 .PHONY : App/UI/Label.o
 
 # target to preprocess a source file
 App/UI/Label.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.i
 .PHONY : App/UI/Label.i
 
 # target to generate assembly for a file
 App/UI/Label.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.s
 .PHONY : App/UI/Label.s
 
 # target to build an object file
+Config/ConfigEntry.o:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o
+.PHONY : Config/ConfigEntry.o
+
+# target to preprocess a source file
+Config/ConfigEntry.i:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.i
+.PHONY : Config/ConfigEntry.i
+
+# target to generate assembly for a file
+Config/ConfigEntry.s:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.s
+.PHONY : Config/ConfigEntry.s
+
+# target to build an object file
+Config/ConfigFile.o:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o
+.PHONY : Config/ConfigFile.o
+
+# target to preprocess a source file
+Config/ConfigFile.i:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.i
+.PHONY : Config/ConfigFile.i
+
+# target to generate assembly for a file
+Config/ConfigFile.s:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.s
+.PHONY : Config/ConfigFile.s
+
+# target to build an object file
+Config/ConfigGroup.o:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o
+.PHONY : Config/ConfigGroup.o
+
+# target to preprocess a source file
+Config/ConfigGroup.i:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.i
+.PHONY : Config/ConfigGroup.i
+
+# target to generate assembly for a file
+Config/ConfigGroup.s:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.s
+.PHONY : Config/ConfigGroup.s
+
+# target to build an object file
 Error/Error.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.o
 .PHONY : Error/Error.o
 
 # target to preprocess a source file
 Error/Error.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.i
 .PHONY : Error/Error.i
 
 # target to generate assembly for a file
 Error/Error.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Error/Error.s
 .PHONY : Error/Error.s
 
 # target to build an object file
 External/SOIL/SOIL.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.o
 .PHONY : External/SOIL/SOIL.o
 
 # target to preprocess a source file
 External/SOIL/SOIL.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.i
 .PHONY : External/SOIL/SOIL.i
 
 # target to generate assembly for a file
 External/SOIL/SOIL.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/SOIL.s
 .PHONY : External/SOIL/SOIL.s
 
 # target to build an object file
 External/SOIL/image_DXT.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.o
 .PHONY : External/SOIL/image_DXT.o
 
 # target to preprocess a source file
 External/SOIL/image_DXT.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.i
 .PHONY : External/SOIL/image_DXT.i
 
 # target to generate assembly for a file
 External/SOIL/image_DXT.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_DXT.s
 .PHONY : External/SOIL/image_DXT.s
 
 # target to build an object file
 External/SOIL/image_helper.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.o
 .PHONY : External/SOIL/image_helper.o
 
 # target to preprocess a source file
 External/SOIL/image_helper.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.i
 .PHONY : External/SOIL/image_helper.i
 
 # target to generate assembly for a file
 External/SOIL/image_helper.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/image_helper.s
 .PHONY : External/SOIL/image_helper.s
 
 # target to build an object file
 External/SOIL/original/stb_image-1.09.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.o
 .PHONY : External/SOIL/original/stb_image-1.09.o
 
 # target to preprocess a source file
 External/SOIL/original/stb_image-1.09.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.i
 .PHONY : External/SOIL/original/stb_image-1.09.i
 
 # target to generate assembly for a file
 External/SOIL/original/stb_image-1.09.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.09.s
 .PHONY : External/SOIL/original/stb_image-1.09.s
 
 # target to build an object file
 External/SOIL/original/stb_image-1.16.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.o
 .PHONY : External/SOIL/original/stb_image-1.16.o
 
 # target to preprocess a source file
 External/SOIL/original/stb_image-1.16.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.i
 .PHONY : External/SOIL/original/stb_image-1.16.i
 
 # target to generate assembly for a file
 External/SOIL/original/stb_image-1.16.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/original/stb_image-1.16.s
 .PHONY : External/SOIL/original/stb_image-1.16.s
 
 # target to build an object file
 External/SOIL/stb_image_aug.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o
 .PHONY : External/SOIL/stb_image_aug.o
 
 # target to preprocess a source file
 External/SOIL/stb_image_aug.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.i
 .PHONY : External/SOIL/stb_image_aug.i
 
 # target to generate assembly for a file
 External/SOIL/stb_image_aug.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.s
 .PHONY : External/SOIL/stb_image_aug.s
 
 # target to build an object file
+MainCamera/MainCamera.o:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o
+.PHONY : MainCamera/MainCamera.o
+
+# target to preprocess a source file
+MainCamera/MainCamera.i:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.i
+.PHONY : MainCamera/MainCamera.i
+
+# target to generate assembly for a file
+MainCamera/MainCamera.s:
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.s
+.PHONY : MainCamera/MainCamera.s
+
+# target to build an object file
 Obj/Object.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o
 .PHONY : Obj/Object.o
 
 # target to preprocess a source file
 Obj/Object.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Obj/Object.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Obj/Object.i
 .PHONY : Obj/Object.i
 
 # target to generate assembly for a file
 Obj/Object.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Obj/Object.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Obj/Object.s
 .PHONY : Obj/Object.s
 
 # target to build an object file
 OpenGL/Program.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.o
 .PHONY : OpenGL/Program.o
 
 # target to preprocess a source file
 OpenGL/Program.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.i
 .PHONY : OpenGL/Program.i
 
 # target to generate assembly for a file
 OpenGL/Program.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Program.s
 .PHONY : OpenGL/Program.s
 
 # target to build an object file
 OpenGL/Texture.o:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.o
 .PHONY : OpenGL/Texture.o
 
 # target to preprocess a source file
 OpenGL/Texture.i:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.i
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.i
 .PHONY : OpenGL/Texture.i
 
 # target to generate assembly for a file
 OpenGL/Texture.s:
-	cd /home/arno/Documents/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.s
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/OpenGL/Texture.s
 .PHONY : OpenGL/Texture.s
 
 # Help Target
@@ -403,6 +469,15 @@ help:
 	@echo "... App/UI/Label.o"
 	@echo "... App/UI/Label.i"
 	@echo "... App/UI/Label.s"
+	@echo "... Config/ConfigEntry.o"
+	@echo "... Config/ConfigEntry.i"
+	@echo "... Config/ConfigEntry.s"
+	@echo "... Config/ConfigFile.o"
+	@echo "... Config/ConfigFile.i"
+	@echo "... Config/ConfigFile.s"
+	@echo "... Config/ConfigGroup.o"
+	@echo "... Config/ConfigGroup.i"
+	@echo "... Config/ConfigGroup.s"
 	@echo "... Error/Error.o"
 	@echo "... Error/Error.i"
 	@echo "... Error/Error.s"
@@ -424,6 +499,9 @@ help:
 	@echo "... External/SOIL/stb_image_aug.o"
 	@echo "... External/SOIL/stb_image_aug.i"
 	@echo "... External/SOIL/stb_image_aug.s"
+	@echo "... MainCamera/MainCamera.o"
+	@echo "... MainCamera/MainCamera.i"
+	@echo "... MainCamera/MainCamera.s"
 	@echo "... Obj/Object.o"
 	@echo "... Obj/Object.i"
 	@echo "... Obj/Object.s"
@@ -444,6 +522,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/arno/Documents/CGK/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
