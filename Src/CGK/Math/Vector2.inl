@@ -27,3 +27,24 @@ std::string CGKVector2<T>::ToString() const
     return s.str();
 }
 //------------------------------------------------------------------------------
+template<typename T>
+void CGKVector2<T>::Normalize()
+{
+	T norm = sqrt(
+			this->data_[0]*this->data_[0] + this->data_[1]*this->data_[1]
+		);
+
+	CGK_ASSERT(norm != 0);
+
+	this->data_[0] /= norm;
+	this->data_[1] /= norm;
+}
+//-----------------------------------------------------------------------------
+template<typename T>
+T CGKVector2<T>::GetMagnitude() const
+{
+	return sqrt(
+			this->data_[0]*this->data_[0] + this->data_[1]*this->data_[1]
+		);
+}
+//-----------------------------------------------------------------------------

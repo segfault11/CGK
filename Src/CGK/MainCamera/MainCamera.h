@@ -19,5 +19,11 @@ void CGKMainCameraSetView(
 const CGKMatrix4f& CGKMainCameraGetPerspective();
 const CGKMatrix4f& CGKMainCameraGetView();
 
+void CGKMainCameraRotateAroundYAxisAtPointWithAngle(
+	const CGKVector3f& point, 
+	float angle
+);
+
+const CGKVector3f& CGKMainCameraGetFocus();
 
 #endif /* end of include guard: MAINCAMERA_H */

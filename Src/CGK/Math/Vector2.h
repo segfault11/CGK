@@ -18,6 +18,9 @@ class CGKVector2
 
         inline operator const T*() const {return data_;}
         inline operator T*() {return data_;}
+	
+		inline void Normalize();
+		inline T GetMagnitude() const;
 
         inline const T& GetX() const {return data_[0];}
         inline const T& GetY() const {return data_[1];}

@@ -13,5 +13,6 @@
 #include "/Object/Object.h"
 #include "/OpenGL/Program.h"
 #include "/OpenGL/Texture.h"
+#include "/OpenGL/Buffer.h"
 
 #endif /* end of include guard: CGK_H */
