@@ -64,18 +64,15 @@ void CGKMainCameraRotateAroundYAxisAtPointWithAngle(
 	// add the angle the camera is rotated
 	a += angle;
 	
-	std::cout << angle << std::endl;
-	std::cout << a << std::endl;
+	if (a > 2*M_PI) 
+	{
+	    a -= 2*M_PI;
+	}
 
-//	if (a > 2*M_PI) 
-//	{
-//	    a -= 2*M_PI;
-//	}
-//
-//	if (a < -2*M_PI) 
-//	{
-//	    a += 2*M_PI;
-//	}
+	if (a < -2*M_PI) 
+	{
+	    a += 2*M_PI;
+	}
 
 	// update eye
 	eye[0] = mag*cos(a) + point[0];
