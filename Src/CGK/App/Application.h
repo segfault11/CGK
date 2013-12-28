@@ -3,7 +3,6 @@
 
 #include "IEventHandler.h"
 #include "IDrawable.h"
-#include "Camera.h"
 #include <list>
 
 
@@ -24,12 +23,11 @@ void CGKAppCreate(
     unsigned int height
 );
 void CGKAppDestroy();
+
 /// Enters the main loop of the application.
 ///  
 /// @since 2013-08-15
 void CGKAppRun();
-void CGKAppSetCamera(const CGKCamera& camera);
-CGKCamera& CGKAppGetCamera();
 void CGKAppRegisterDrawable(CGKAppIDrawable& drawable);
 void CGKAppRegisterEventHandler(CGKAppIEventHandler& eventHandler);
 unsigned int CGKAppGetScreenWidth();

@@ -25,31 +25,10 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.cpp
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Camera.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IDrawable.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Camera.cpp
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Camera.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.inl
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.cpp
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.h
@@ -59,38 +38,21 @@ Src/CGK/CMakeFiles/CGK.dir/App/IObject.o
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Camera.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IDrawable.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/UI/Label.cpp
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/UI/Label.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector2.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector2.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.inl
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/OpenGL/Program.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/OpenGL/Texture.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Util.h
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.cpp
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.h
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigFile.cpp
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigFile.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.h
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.h
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.cpp
- /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.h
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.cpp
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.h
@@ -102,6 +64,8 @@ Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Matrix4.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Tuple.inl
+ /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector2.h
+ /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector2.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.h
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector3.inl
  /Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Math/Vector4.h

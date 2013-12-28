@@ -20,7 +20,6 @@ static std::list<CGKAppIEventHandler*> eventHandlers_;
 static std::list<CGKAppIDrawable*> drawables_;
 static std::list<CGKAppIDrawable*> guiElements_;
 static std::list<CGKAppIObject*> objects_;
-static CGKCamera camera_;
 //------------------------------------------------------------------------------
 static unsigned int screenWidth_;
 static unsigned int screenHeight_;
@@ -225,15 +224,5 @@ unsigned int CGKAppGetScreenWidth()
 unsigned int CGKAppGetScreenHeight()
 {
     return screenHeight_;
-}
-//------------------------------------------------------------------------------
-void CGKAppSetCamera(const CGKCamera& camera)
-{
-    camera_ = camera;
-}
-//------------------------------------------------------------------------------
-CGKCamera& CGKAppGetCamera()
-{
-    return camera_;
 }
 //------------------------------------------------------------------------------

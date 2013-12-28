@@ -6,19 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.h
-string
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.cpp
+Application.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.h
+../Error/Error.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.h
+stdexcept
+-
+GL/GLEW.h
+-
+GL/glew.h
+-
+iostream
+-
+SDL2/SDL.h
 -
 
-/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.cpp
-ConfigGroup.h
-/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.h
+IEventHandler.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.h
+IDrawable.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IDrawable.h
 list
 -
 
-/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.h
-string
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IDrawable.h
+IObject.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.h
+
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.h
+SDL2/SDL.h
 -
-ConfigEntry.h
-/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.h
+IObject.h
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.h
+
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.h
+
+/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.h
 

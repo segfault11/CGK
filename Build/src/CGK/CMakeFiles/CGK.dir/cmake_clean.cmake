@@ -1,12 +1,8 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/CGK.dir/App/Application.o"
-  "CMakeFiles/CGK.dir/App/Camera.o"
   "CMakeFiles/CGK.dir/App/IEventHandler.o"
   "CMakeFiles/CGK.dir/App/IObject.o"
   "CMakeFiles/CGK.dir/App/UI/Label.o"
-  "CMakeFiles/CGK.dir/Config/ConfigEntry.o"
-  "CMakeFiles/CGK.dir/Config/ConfigFile.o"
-  "CMakeFiles/CGK.dir/Config/ConfigGroup.o"
   "CMakeFiles/CGK.dir/Error/Error.o"
   "CMakeFiles/CGK.dir/MainCamera/MainCamera.o"
   "CMakeFiles/CGK.dir/Obj/Object.o"

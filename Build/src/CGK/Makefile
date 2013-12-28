@@ -172,21 +172,6 @@ App/Application.s:
 .PHONY : App/Application.s
 
 # target to build an object file
-App/Camera.o:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.o
-.PHONY : App/Camera.o
-
-# target to preprocess a source file
-App/Camera.i:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.i
-.PHONY : App/Camera.i
-
-# target to generate assembly for a file
-App/Camera.s:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/Camera.s
-.PHONY : App/Camera.s
-
-# target to build an object file
 App/IEventHandler.o:
 	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o
 .PHONY : App/IEventHandler.o
@@ -230,51 +215,6 @@ App/UI/Label.i:
 App/UI/Label.s:
 	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.s
 .PHONY : App/UI/Label.s
-
-# target to build an object file
-Config/ConfigEntry.o:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o
-.PHONY : Config/ConfigEntry.o
-
-# target to preprocess a source file
-Config/ConfigEntry.i:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.i
-.PHONY : Config/ConfigEntry.i
-
-# target to generate assembly for a file
-Config/ConfigEntry.s:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.s
-.PHONY : Config/ConfigEntry.s
-
-# target to build an object file
-Config/ConfigFile.o:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o
-.PHONY : Config/ConfigFile.o
-
-# target to preprocess a source file
-Config/ConfigFile.i:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.i
-.PHONY : Config/ConfigFile.i
-
-# target to generate assembly for a file
-Config/ConfigFile.s:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.s
-.PHONY : Config/ConfigFile.s
-
-# target to build an object file
-Config/ConfigGroup.o:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o
-.PHONY : Config/ConfigGroup.o
-
-# target to preprocess a source file
-Config/ConfigGroup.i:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.i
-.PHONY : Config/ConfigGroup.i
-
-# target to generate assembly for a file
-Config/ConfigGroup.s:
-	cd /Users/scatterbrain/Documents/Projects/Private/CGK/Build && $(MAKE) -f Src/CGK/CMakeFiles/CGK.dir/build.make Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.s
-.PHONY : Config/ConfigGroup.s
 
 # target to build an object file
 Error/Error.o:
@@ -457,9 +397,6 @@ help:
 	@echo "... App/Application.o"
 	@echo "... App/Application.i"
 	@echo "... App/Application.s"
-	@echo "... App/Camera.o"
-	@echo "... App/Camera.i"
-	@echo "... App/Camera.s"
 	@echo "... App/IEventHandler.o"
 	@echo "... App/IEventHandler.i"
 	@echo "... App/IEventHandler.s"
@@ -469,15 +406,6 @@ help:
 	@echo "... App/UI/Label.o"
 	@echo "... App/UI/Label.i"
 	@echo "... App/UI/Label.s"
-	@echo "... Config/ConfigEntry.o"
-	@echo "... Config/ConfigEntry.i"
-	@echo "... Config/ConfigEntry.s"
-	@echo "... Config/ConfigFile.o"
-	@echo "... Config/ConfigFile.i"
-	@echo "... Config/ConfigFile.s"
-	@echo "... Config/ConfigGroup.o"
-	@echo "... Config/ConfigGroup.i"
-	@echo "... Config/ConfigGroup.s"
 	@echo "... Error/Error.o"
 	@echo "... Error/Error.i"
 	@echo "... Error/Error.s"

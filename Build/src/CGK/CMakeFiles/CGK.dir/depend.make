@@ -24,31 +24,10 @@ Src/CGK/CMakeFiles/CGK.dir/External/SOIL/stb_image_aug.o: ../Src/CGK/External/SO
 
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/Application.cpp
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/Application.h
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/Camera.h
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/IDrawable.h
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/IEventHandler.h
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/App/IObject.h
 Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Error/Error.h
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Matrix4.h
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Matrix4.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Tuple.h
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Tuple.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Vector3.h
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Vector3.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Vector4.h
-Src/CGK/CMakeFiles/CGK.dir/App/Application.o: ../Src/CGK/Math/Vector4.inl
-
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/App/Camera.cpp
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/App/Camera.h
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Error/Error.h
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Matrix4.h
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Matrix4.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Tuple.h
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Tuple.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Vector3.h
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Vector3.inl
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Vector4.h
-Src/CGK/CMakeFiles/CGK.dir/App/Camera.o: ../Src/CGK/Math/Vector4.inl
 
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o: ../Src/CGK/App/IEventHandler.cpp
 Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o: ../Src/CGK/App/IEventHandler.h
@@ -58,38 +37,21 @@ Src/CGK/CMakeFiles/CGK.dir/App/IObject.o: ../Src/CGK/App/IObject.cpp
 Src/CGK/CMakeFiles/CGK.dir/App/IObject.o: ../Src/CGK/App/IObject.h
 
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/Application.h
-Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/Camera.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/IDrawable.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/IEventHandler.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/IObject.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/UI/Label.cpp
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/App/UI/Label.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Error/Error.h
-Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Matrix4.h
-Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Matrix4.inl
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Tuple.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Tuple.inl
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Vector2.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Vector2.inl
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Vector3.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Vector3.inl
-Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Vector4.h
-Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Math/Vector4.inl
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/OpenGL/Program.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/OpenGL/Texture.h
 Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o: ../Src/CGK/Util.h
-
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o: ../Src/CGK/Config/ConfigEntry.cpp
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o: ../Src/CGK/Config/ConfigEntry.h
-
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigEntry.h
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigFile.cpp
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigFile.h
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o: ../Src/CGK/Config/ConfigGroup.h
-
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o: ../Src/CGK/Config/ConfigEntry.h
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o: ../Src/CGK/Config/ConfigGroup.cpp
-Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o: ../Src/CGK/Config/ConfigGroup.h
 
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o: ../Src/CGK/Error/Error.cpp
 Src/CGK/CMakeFiles/CGK.dir/Error/Error.o: ../Src/CGK/Error/Error.h
@@ -101,6 +63,8 @@ Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Matrix4.h
 Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Matrix4.inl
 Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Tuple.h
 Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Tuple.inl
+Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Vector2.h
+Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Vector2.inl
 Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Vector3.h
 Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Vector3.inl
 Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o: ../Src/CGK/Math/Vector4.h

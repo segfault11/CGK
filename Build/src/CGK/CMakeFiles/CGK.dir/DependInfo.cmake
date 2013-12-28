@@ -15,13 +15,9 @@ SET(CMAKE_DEPENDS_CHECK_C
 SET(CMAKE_C_COMPILER_ID "Clang")
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Application.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/Application.o"
-  "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/Camera.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/Camera.o"
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IEventHandler.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/IEventHandler.o"
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/IObject.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/IObject.o"
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/App/UI/Label.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/App/UI/Label.o"
-  "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigEntry.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Config/ConfigEntry.o"
-  "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigFile.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Config/ConfigFile.o"
-  "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Config/ConfigGroup.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Config/ConfigGroup.o"
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Error/Error.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Error/Error.o"
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/MainCamera/MainCamera.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/MainCamera/MainCamera.o"
   "/Users/scatterbrain/Documents/Projects/Private/CGK/Src/CGK/Obj/Object.cpp" "/Users/scatterbrain/Documents/Projects/Private/CGK/Build/Src/CGK/CMakeFiles/CGK.dir/Obj/Object.o"
