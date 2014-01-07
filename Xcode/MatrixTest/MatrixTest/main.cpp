@@ -7,12 +7,14 @@
 //
 
 #include <iostream>
+#include <CGK/Math/Matrix4.h>
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    CGKMatrix4f b;
+    b[0] = CGKVector4f(0.0, 1.0, 0.0, 0.0);
+    b.MakeIdentity();
+    std::cout << b.ComputeDeterminant() << std::endl;
     return 0;
 }
 

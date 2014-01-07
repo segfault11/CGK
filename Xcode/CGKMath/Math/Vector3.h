@@ -46,11 +46,6 @@ typedef CGKVector3<float> CGKVector3f;
 typedef CGKVector3<int> CGKVector3i;
 typedef CGKVector3<unsigned int> CGKVector3ui;
 
-template<typename T>
-using CGKColor3 = CGKVector3<T>;
-
-typedef CGKVector3<float> CGKColor3f;
-
 void CGKMathCross(CGKVector3f& res, const CGKVector3f& a, const CGKVector3f& b);
 
 #include "Vector3.inl" 

@@ -8,15 +8,6 @@ CGKVector4<T>::CGKVector4(const T& x, const T& y, const T& z)
 }
 //------------------------------------------------------------------------------
 template<typename T>
-CGKVector4<T>::CGKVector4(const T& x, const T& y, const T& z, const T& w)
-{
-    data_[0] = x;
-    data_[1] = y;
-    data_[2] = z;
-    data_[3] = w;
-}
-//------------------------------------------------------------------------------
-template<typename T>
 CGKVector4<T>::CGKVector4(const CGKVector4& orig)
 {
     data_ = orig.data_;

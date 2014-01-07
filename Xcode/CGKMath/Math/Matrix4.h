@@ -25,13 +25,9 @@ public:
     inline void Transpose();
     inline const CGKVector4<T>& operator[](unsigned int i) const;
     inline CGKVector4<T>& operator[](unsigned int i);
-	inline CGKMatrix4<T> operator*(const CGKMatrix4<T>& m);
-	inline CGKVector3<T> operator*(const CGKVector3<T>& v);
-	inline CGKVector4<T> operator*(const CGKVector4<T>& v);
 
     /// Gets the raw data in form of a linear array with 16 elements.
     const T* GetData() const;
-
 
     /// Turns the matrix to an OpenGL perspective matrix. NOTE THAT THE 
     /// MATRIX IS STILL ROW MAJOR AND NEEDS TO BE TRANSPOSED WHEN BEING 
@@ -76,7 +72,6 @@ public:
     /// THAT THE MATRIX IS STILL ROW MAJOR AND NEEDS TO BE TRANSPOSED WHEN 
     /// BEING PASSED TO OPENGL.
     inline void MakeScale(const T& sx, const T& sy, const T& sz);
-	inline void MakeTranslation(const T& x, const T& y, const T& z);
 
     /// Fills the matrix with zeroes.        
     inline void MakeZero();
@@ -86,9 +81,6 @@ public:
 
     /// Computes the the determinant
     inline T ComputeDeterminant() const;
-
-	/// Inverts the matrix. Returns false if the matrix cannot be inverted.
-	inline bool Invert();
 
 private:    
     CGKVector4<CGKVector4<T> > data_;

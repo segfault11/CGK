@@ -25,14 +25,12 @@ CGKVector3<T>& CGKVector3<T>::operator=(const CGKVector3& orig)
 template<typename T>
 T& CGKVector3<T>::operator[](unsigned int i)
 {
-
     return data_[i];
 }
 //------------------------------------------------------------------------------
 template<typename T>
 const T& CGKVector3<T>::operator[](unsigned int i) const
 {
-    
     return data_[i];
 }
 //------------------------------------------------------------------------------
@@ -50,15 +48,15 @@ bool CGKVector3<T>::Normalize()
     T norm = sqrt(data_[0]*data_[0] + data_[1]*data_[1] + data_[2]*data_[2]);
 
     if (norm == 0.0)
-	{
-		return false;
-	}
+    {
+        return false;
+    }
 
     data_[0] /= norm;
     data_[1] /= norm;
     data_[2] /= norm;
-
-	return true;
+    
+    return true;
 }
 //------------------------------------------------------------------------------
 template<typename T>

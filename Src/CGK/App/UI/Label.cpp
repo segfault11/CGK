@@ -398,7 +398,7 @@ void CGKUILabel::RealLabel::SetFontColor(const CGKVector3f& color)
 //-----------------------------------------------------------------------------
 void CGKUILabel::RealLabel::setBuffer(const std::string& text)
 {
-    unsigned int length = text.size();
+    size_t  length = text.size();
     GLsizei size = sizeof(int)*4*length;
     int* glyphData = new int[4*length];
     int posX = this->position.GetX();

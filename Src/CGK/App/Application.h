@@ -5,16 +5,21 @@
 #include "IDrawable.h"
 #include <list>
 
+/// Sets the window to be fullscreen.
+/// Should be called before [CGKAppCreate]
+void CGKAppSetFullScreen(bool f);
+
+/// Sets the OpenGL version. (Note: Only Core profile is supported)
+/// Should be called before [CGKAppCreate]
+void CGKAppSetOpenGLVersion(int major, int minor);
 
 /// Initialize the application. Creates a window and an OpenGL 3.2 context.
 /// 
-/// @param name Name of the applications (title of the window).
-/// @param x x position of the window.
-/// @param y y position of the window.
-/// @param width width of the window.
-/// @param height height of the window.
-///
-/// @since 2013-08-15 
+/// \param name Name of the applications (title of the window).
+/// \param x x position of the window.
+/// \param y y position of the window.
+/// \param width width of the window.
+/// \param height height of the window.
 void CGKAppCreate(
     const char* name, 
     unsigned int x, 
@@ -25,8 +30,6 @@ void CGKAppCreate(
 void CGKAppDestroy();
 
 /// Enters the main loop of the application.
-///  
-/// @since 2013-08-15
 void CGKAppRun();
 void CGKAppRegisterDrawable(CGKAppIDrawable& drawable);
 void CGKAppRegisterEventHandler(CGKAppIEventHandler& eventHandler);

@@ -1,11 +1,71 @@
+//-----------------------------------------------------------------------------
+template<typename T>
+CGKMatrix4<T>::CGKMatrix4(
+    const CGKVector4<T>& row0,
+    const CGKVector4<T>& row1,
+    const CGKVector4<T>& row2,
+    const CGKVector4<T>& row3
+)
+{
+    data_[0] = row0;
+    data_[1] = row1;
+    data_[2] = row2;
+    data_[3] = row3;
+}
 //------------------------------------------------------------------------------
 template<typename T>
 CGKVector4<T>& CGKMatrix4<T>::operator[](unsigned int i)
 {
-    CGK_ASSERT(i < 4)
     return data_[i];
 }
 //------------------------------------------------------------------------------
+template<typename T>
+const CGKVector4<T>& CGKMatrix4<T>::operator[](unsigned int i) const
+{
+    return data_[i];
+}
+//-----------------------------------------------------------------------------
+template<typename T>
+CGKVector3<T> CGKMatrix4<T>::operator*(const CGKVector3<T>& v)
+{
+	T x = data_[0][0]*v[0] + data_[0][1]*v[1] + data_[0][2]*v[2] + data_[0][3];
+	T y = data_[1][0]*v[0] + data_[1][1]*v[1] + data_[1][2]*v[2] + data_[1][3];
+	T z = data_[2][0]*v[0] + data_[2][1]*v[1] + data_[2][2]*v[2] + data_[2][3];
+	T w = data_[3][0]*v[0] + data_[3][1]*v[1] + data_[3][2]*v[2] + data_[2][3];
+
+	return CGKVector3<T>(x/w, y/w, z/w);
+}
+//-----------------------------------------------------------------------------
+template<typename T>
+CGKVector4<T> CGKMatrix4<T>::operator*(const CGKVector4<T>& v)
+{
+	T x = data_[0][0]*v[0] + data_[0][1]*v[1] + data_[0][2]*v[2] + data_[0][3]*v[3];
+	T y = data_[1][0]*v[0] + data_[1][1]*v[1] + data_[1][2]*v[2] + data_[1][3]*v[3];
+	T z = data_[2][0]*v[0] + data_[2][1]*v[1] + data_[2][2]*v[2] + data_[2][3]*v[3];
+	T w = data_[3][0]*v[0] + data_[3][1]*v[1] + data_[3][2]*v[2] + data_[2][3]*v[3];
+
+	return CGKVector3<T>(x, y, z, w);
+}
+//-----------------------------------------------------------------------------
+template<typename T>
+CGKMatrix4<T> CGKMatrix4<T>::operator*(const CGKMatrix4<T>& m)
+{
+	CGKMatrix4<T> res;
+
+	for (int i = 0; i < 4; i++) 
+	{
+	    for (int j = 0; j < 4; j++) 
+	    {
+	        for (int k = 0; k < 4; k++) 
+	        {
+	            res[i][j] += data_[i][k] * m[k][j];
+	        }
+	    }
+	}
+
+	return res;
+}
+//-----------------------------------------------------------------------------
 template<typename T>
 void CGKMatrix4<T>::Transpose()
 {
@@ -28,6 +88,25 @@ const T* CGKMatrix4<T>::GetData() const
     return &data_[0][0];
 }
 //------------------------------------------------------------------------------
+template<typename T>
+inline void CGKMatrix4<T>::MakeScale(const T& sx, const T& sy, const T& sz)
+{
+	this->MakeZero();
+	data_[0][0] = sx;
+	data_[1][1] = sy;
+	data_[2][2] = sz;
+	data_[3][3] = T(1);
+}
+//-----------------------------------------------------------------------------
+template<typename T>
+inline void CGKMatrix4<T>::MakeTranslation(const T& x, const T& y, const T& z)
+{
+	this->MakeIdentity();
+	data_[0][3] = x;
+	data_[1][3] = y;
+	data_[2][3] = z;
+}
+//-----------------------------------------------------------------------------
 template<typename T>
 void CGKMatrix4<T>::MakePerspective(
     const T& fovy, 
@@ -135,17 +214,6 @@ void CGKMatrix4<T>::MakeIdentity()
 }
 //------------------------------------------------------------------------------
 template<typename T>
-void CGKMatrix4<T>::MakeScale(const T& sx, const T& sy, const T& sz)
-{
-    this->MakeZero();
-
-    (*this)[0][0] = sx;
-    (*this)[1][1] = sy;
-    (*this)[2][2] = sz;
-    (*this)[3][3] = static_cast<T>(1);
-}
-//------------------------------------------------------------------------------
-template<typename T>
 void CGKMatrix4<T>::MakeZero()
 {
     for (unsigned int i = 0; i < 4; i++)
@@ -170,3 +238,161 @@ void CGKMatrix4<T>::MakeRotationY(const T& angle)
     (*this)[3][3] = static_cast<T>(1);
 }
 //------------------------------------------------------------------------------
+template<typename T>
+inline T CGKMatrix4<T>::ComputeDeterminant() const
+{
+    #define a(i,j) data_[i][j]
+    float det;
+    
+    det = a(0,0)*(a(1,1)*a(2,2)*a(3,3)+a(1,2)*a(2,3)*a(3,1)+a(1,3)*a(2,1)*a(3,2)
+                 -a(1,1)*a(2,3)*a(3,2)-a(1,2)*a(2,1)*a(3,3)-a(1,3)*a(2,2)*a(3,1))
+        + a(0,1)*(a(1,0)*a(2,3)*a(3,2)+a(1,2)*a(2,0)*a(3,3)+a(1,3)*a(2,2)*a(3,0)
+                 -a(1,0)*a(2,2)*a(3,3)-a(1,2)*a(2,3)*a(3,0)-a(1,3)*a(2,0)*a(3,2))
+        + a(0,2)*(a(1,0)*a(2,1)*a(3,3)+a(1,1)*a(2,3)*a(3,0)+a(1,3)*a(2,0)*a(3,1)
+                 -a(1,0)*a(2,3)*a(3,1)-a(1,1)*a(2,0)*a(3,3)-a(1,3)*a(2,1)*a(3,0))
+        + a(0,3)*(a(1,0)*a(2,2)*a(3,1)+a(1,1)*a(2,0)*a(3,2)+a(1,2)*a(2,1)*a(3,0)
+                 -a(1,0)*a(2,1)*a(3,2)-a(1,1)*a(2,2)*a(3,0)-a(1,2)*a(2,0)*a(3,1));
+    
+    #undef a // end of a
+    return det;
+}
+//------------------------------------------------------------------------------
+template<typename T>
+bool CGKMatrix4<T>::Invert()
+{
+	this->Transpose();
+    T inv[16], det;
+    T* m = &data_[0][0];
+
+    inv[0] = m[5]  * m[10] * m[15] - 
+             m[5]  * m[11] * m[14] - 
+             m[9]  * m[6]  * m[15] + 
+             m[9]  * m[7]  * m[14] +
+             m[13] * m[6]  * m[11] - 
+             m[13] * m[7]  * m[10];
+
+    inv[4] = -m[4]  * m[10] * m[15] + 
+              m[4]  * m[11] * m[14] + 
+              m[8]  * m[6]  * m[15] - 
+              m[8]  * m[7]  * m[14] - 
+              m[12] * m[6]  * m[11] + 
+              m[12] * m[7]  * m[10];
+
+    inv[8] = m[4]  * m[9] * m[15] - 
+             m[4]  * m[11] * m[13] - 
+             m[8]  * m[5] * m[15] + 
+             m[8]  * m[7] * m[13] + 
+             m[12] * m[5] * m[11] - 
+             m[12] * m[7] * m[9];
+
+    inv[12] = -m[4]  * m[9] * m[14] + 
+               m[4]  * m[10] * m[13] +
+               m[8]  * m[5] * m[14] - 
+               m[8]  * m[6] * m[13] - 
+               m[12] * m[5] * m[10] + 
+               m[12] * m[6] * m[9];
+
+    inv[1] = -m[1]  * m[10] * m[15] + 
+              m[1]  * m[11] * m[14] + 
+              m[9]  * m[2] * m[15] - 
+              m[9]  * m[3] * m[14] - 
+              m[13] * m[2] * m[11] + 
+              m[13] * m[3] * m[10];
+
+    inv[5] = m[0]  * m[10] * m[15] - 
+             m[0]  * m[11] * m[14] - 
+             m[8]  * m[2] * m[15] + 
+             m[8]  * m[3] * m[14] + 
+             m[12] * m[2] * m[11] - 
+             m[12] * m[3] * m[10];
+
+    inv[9] = -m[0]  * m[9] * m[15] + 
+              m[0]  * m[11] * m[13] + 
+              m[8]  * m[1] * m[15] - 
+              m[8]  * m[3] * m[13] - 
+              m[12] * m[1] * m[11] + 
+              m[12] * m[3] * m[9];
+
+    inv[13] = m[0]  * m[9] * m[14] - 
+              m[0]  * m[10] * m[13] - 
+              m[8]  * m[1] * m[14] + 
+              m[8]  * m[2] * m[13] + 
+              m[12] * m[1] * m[10] - 
+              m[12] * m[2] * m[9];
+
+    inv[2] = m[1]  * m[6] * m[15] - 
+             m[1]  * m[7] * m[14] - 
+             m[5]  * m[2] * m[15] + 
+             m[5]  * m[3] * m[14] + 
+             m[13] * m[2] * m[7] - 
+             m[13] * m[3] * m[6];
+
+    inv[6] = -m[0]  * m[6] * m[15] + 
+              m[0]  * m[7] * m[14] + 
+              m[4]  * m[2] * m[15] - 
+              m[4]  * m[3] * m[14] - 
+              m[12] * m[2] * m[7] + 
+              m[12] * m[3] * m[6];
+
+    inv[10] = m[0]  * m[5] * m[15] - 
+              m[0]  * m[7] * m[13] - 
+              m[4]  * m[1] * m[15] + 
+              m[4]  * m[3] * m[13] + 
+              m[12] * m[1] * m[7] - 
+              m[12] * m[3] * m[5];
+
+    inv[14] = -m[0]  * m[5] * m[14] + 
+               m[0]  * m[6] * m[13] + 
+               m[4]  * m[1] * m[14] - 
+               m[4]  * m[2] * m[13] - 
+               m[12] * m[1] * m[6] + 
+               m[12] * m[2] * m[5];
+
+    inv[3] = -m[1] * m[6] * m[11] + 
+              m[1] * m[7] * m[10] + 
+              m[5] * m[2] * m[11] - 
+              m[5] * m[3] * m[10] - 
+              m[9] * m[2] * m[7] + 
+              m[9] * m[3] * m[6];
+
+    inv[7] = m[0] * m[6] * m[11] - 
+             m[0] * m[7] * m[10] - 
+             m[4] * m[2] * m[11] + 
+             m[4] * m[3] * m[10] + 
+             m[8] * m[2] * m[7] - 
+             m[8] * m[3] * m[6];
+
+    inv[11] = -m[0] * m[5] * m[11] + 
+               m[0] * m[7] * m[9] + 
+               m[4] * m[1] * m[11] - 
+               m[4] * m[3] * m[9] - 
+               m[8] * m[1] * m[7] + 
+               m[8] * m[3] * m[5];
+
+    inv[15] = m[0] * m[5] * m[10] - 
+              m[0] * m[6] * m[9] - 
+              m[4] * m[1] * m[10] + 
+              m[4] * m[2] * m[9] + 
+              m[8] * m[1] * m[6] - 
+              m[8] * m[2] * m[5];
+
+    det = m[0] * inv[0] + m[1] * inv[4] + m[2] * inv[8] + m[3] * inv[12];
+
+    if (det == 0)
+    {
+		this->Transpose();
+        return false;
+    }
+
+    det = 1.0 / det;
+
+    for (int i = 0; i < 16; i++)
+    {
+        m[i] = inv[i] * det;
+    }
+
+    this->Transpose();
+
+	return true;
+}
+//-----------------------------------------------------------------------------

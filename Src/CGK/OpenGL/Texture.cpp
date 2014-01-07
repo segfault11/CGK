@@ -104,8 +104,8 @@ void CGKOpenGLTexture2DSaveAsBMP(const char* filename, GLuint handle)
         return;
     }
 
-    int pos = subptr - filename;
-    int numChars = std::strlen(filename);
+    long pos = subptr - filename;
+    long numChars = std::strlen(filename);
 
     if (numChars - pos != 4)
     {

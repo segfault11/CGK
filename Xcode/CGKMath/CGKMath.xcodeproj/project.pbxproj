@@ -6,8 +6,31 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		192E58861877D42A0037D544 /* Matrix4.h in Headers */ = {isa = PBXBuildFile; fileRef = 192E587A1877D42A0037D544 /* Matrix4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E58881877D42A0037D544 /* Tuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 192E587D1877D42A0037D544 /* Tuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E58891877D42A0037D544 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 192E587F1877D42A0037D544 /* Vector2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E588A1877D42A0037D544 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 192E58811877D42A0037D544 /* Vector3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E588B1877D42A0037D544 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = 192E58831877D42A0037D544 /* Vector4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E588C1877D4E00037D544 /* Matrix4.inl in Headers */ = {isa = PBXBuildFile; fileRef = 192E587B1877D42A0037D544 /* Matrix4.inl */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E588D1877D4E80037D544 /* Tuple.inl in Headers */ = {isa = PBXBuildFile; fileRef = 192E587E1877D42A0037D544 /* Tuple.inl */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E588E1877D4E80037D544 /* Vector2.inl in Headers */ = {isa = PBXBuildFile; fileRef = 192E58801877D42A0037D544 /* Vector2.inl */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E588F1877D4E80037D544 /* Vector3.inl in Headers */ = {isa = PBXBuildFile; fileRef = 192E58821877D42A0037D544 /* Vector3.inl */; settings = {ATTRIBUTES = (Public, ); }; };
+		192E58901877D4E80037D544 /* Vector4.inl in Headers */ = {isa = PBXBuildFile; fileRef = 192E58841877D42A0037D544 /* Vector4.inl */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		192E58701877D41D0037D544 /* libCGKMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCGKMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		192E587A1877D42A0037D544 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
+		192E587B1877D42A0037D544 /* Matrix4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Matrix4.inl; sourceTree = "<group>"; };
+		192E587D1877D42A0037D544 /* Tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tuple.h; sourceTree = "<group>"; };
+		192E587E1877D42A0037D544 /* Tuple.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tuple.inl; sourceTree = "<group>"; };
+		192E587F1877D42A0037D544 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		192E58801877D42A0037D544 /* Vector2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vector2.inl; sourceTree = "<group>"; };
+		192E58811877D42A0037D544 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		192E58821877D42A0037D544 /* Vector3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vector3.inl; sourceTree = "<group>"; };
+		192E58831877D42A0037D544 /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
+		192E58841877D42A0037D544 /* Vector4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vector4.inl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +47,7 @@
 		192E58671877D41D0037D544 = {
 			isa = PBXGroup;
 			children = (
+				192E58771877D42A0037D544 /* Math */,
 				192E58711877D41D0037D544 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,6 +60,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		192E58771877D42A0037D544 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				192E587A1877D42A0037D544 /* Matrix4.h */,
+				192E587B1877D42A0037D544 /* Matrix4.inl */,
+				192E587D1877D42A0037D544 /* Tuple.h */,
+				192E587E1877D42A0037D544 /* Tuple.inl */,
+				192E587F1877D42A0037D544 /* Vector2.h */,
+				192E58801877D42A0037D544 /* Vector2.inl */,
+				192E58811877D42A0037D544 /* Vector3.h */,
+				192E58821877D42A0037D544 /* Vector3.inl */,
+				192E58831877D42A0037D544 /* Vector4.h */,
+				192E58841877D42A0037D544 /* Vector4.inl */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +84,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192E588B1877D42A0037D544 /* Vector4.h in Headers */,
+				192E58861877D42A0037D544 /* Matrix4.h in Headers */,
+				192E58891877D42A0037D544 /* Vector2.h in Headers */,
+				192E58881877D42A0037D544 /* Tuple.h in Headers */,
+				192E588C1877D4E00037D544 /* Matrix4.inl in Headers */,
+				192E588D1877D4E80037D544 /* Tuple.inl in Headers */,
+				192E588E1877D4E80037D544 /* Vector2.inl in Headers */,
+				192E588F1877D4E80037D544 /* Vector3.inl in Headers */,
+				192E58901877D4E80037D544 /* Vector4.inl in Headers */,
+				192E588A1877D42A0037D544 /* Vector3.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

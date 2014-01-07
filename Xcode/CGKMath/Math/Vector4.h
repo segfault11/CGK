@@ -9,7 +9,6 @@ class CGKVector4
 public:
     CGKVector4() {}
     CGKVector4(const T& x, const T& y, const T& z);
-    CGKVector4(const T& x, const T& y, const T& z, const T& w);
     ~CGKVector4() {};
 
     CGKVector4(const CGKVector4& orig);
@@ -37,8 +36,8 @@ private:
   
 #include "Vector4.inl" 
      
-typedef CGKVector4<float> CGKVector4f;
-typedef CGKVector4<int> CGKVector4i;
-typedef CGKVector4<unsigned int> CGKVector4ui;
+typedef CGKVector4<float> Vector4f;
+typedef CGKVector4<int> Vector4i;
+typedef CGKVector4<unsigned int> Vector4ui;
 
 #endif /* end of include guard: VECTOR3_H__ */

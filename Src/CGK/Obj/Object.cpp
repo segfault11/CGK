@@ -138,7 +138,7 @@ void CGKObjDump(const CGKObjFile* file)
             std::cout << "\t\tFaceCount: " << file->Objects[i].Groups[j].Faces.size() << std::endl;
             std::cout << "\n\t\tFaces:" << std::endl;
 
-            unsigned int numFaces = file->Objects[i].Groups[j].Faces.size();
+            unsigned long numFaces = file->Objects[i].Groups[j].Faces.size();
 
             for (unsigned int k = 0; k < numFaces; k++)
             {
@@ -332,8 +332,8 @@ bool addFace(CGKObjFile& file, std::string& line)
     f.MaterialIndex = matIndex_;
 
     // scan line
-    unsigned int currObj = file.Objects.size() - 1;
-    unsigned int currGrp = file.Objects[currObj].Groups.size() - 1;
+    size_t currObj = file.Objects.size() - 1;
+    size_t currGrp = file.Objects[currObj].Groups.size() - 1;
 
     // case: f [p] [p] [p]
     int n = std::sscanf(
@@ -527,7 +527,7 @@ void processMatLine(CGKObjFile& file, unsigned int lineNo, std::string& line)
     }
 
     // fill the most recently add material
-    unsigned int cmi = file.Materials.size() - 1;
+    size_t cmi = file.Materials.size() - 1;
 
     if (line.find("Ns") == 0)
     {

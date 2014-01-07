@@ -2,16 +2,17 @@
 #include "Application.h"
 #include "../Error/Error.h"
 #include <stdexcept>
-
 #ifdef __APPLE__
     #include <GL/GLEW.h>
 #elif __linux
     #include <GL/glew.h>
 #endif
-
 #include <iostream>
 #include <SDL2/SDL.h>
 //------------------------------------------------------------------------------
+static bool fullscreen = false;
+static int majorVersion = 3;
+static int minorVersion = 2;
 static bool initialized_ = false;
 static SDL_Window* window_ = NULL;
 static SDL_GLContext context_ = NULL;
@@ -44,17 +45,30 @@ void CGKAppCreate(
     }
 
     // Set OpenGL context attributes
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, majorVersion);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVersion);
+    
+    SDL_GL_SetAttribute(
+        SDL_GL_CONTEXT_PROFILE_MASK,
+        SDL_GL_CONTEXT_PROFILE_CORE
+    );
+    
     SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 24);
     
     // create a new window  
+    
+    Uint32 flags = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN;
+    
+    if (fullscreen)
+    {
+        flags = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN;
+    }
+    
     window_ = SDL_CreateWindow(
             name,
             0, 0, 
             width, height, 
-            SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN
+            flags
         );
 
     if (window_ == NULL)
@@ -224,5 +238,16 @@ unsigned int CGKAppGetScreenWidth()
 unsigned int CGKAppGetScreenHeight()
 {
     return screenHeight_;
+}
+//------------------------------------------------------------------------------
+void CGKAppSetOpenGLVersion(int major, int minor)
+{
+    majorVersion = major;
+    minorVersion = minor;
+}
+//------------------------------------------------------------------------------
+void CGKAppSetFullScreen(bool f)
+{
+    fullscreen = f;
 }
 //------------------------------------------------------------------------------
