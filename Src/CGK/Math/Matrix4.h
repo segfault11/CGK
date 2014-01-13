@@ -25,9 +25,9 @@ public:
     inline void Transpose();
     inline const CGKVector4<T>& operator[](unsigned int i) const;
     inline CGKVector4<T>& operator[](unsigned int i);
-	inline CGKMatrix4<T> operator*(const CGKMatrix4<T>& m);
-	inline CGKVector3<T> operator*(const CGKVector3<T>& v);
-	inline CGKVector4<T> operator*(const CGKVector4<T>& v);
+	inline CGKMatrix4<T> operator*(const CGKMatrix4<T>& m) const;
+	inline CGKVector3<T> operator*(const CGKVector3<T>& v) const;
+	inline CGKVector4<T> operator*(const CGKVector4<T>& v) const;
 
     /// Gets the raw data in form of a linear array with 16 elements.
     const T* GetData() const;

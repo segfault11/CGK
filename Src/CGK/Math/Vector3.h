@@ -37,7 +37,7 @@ public:
     inline T Dot(const CGKVector3<T>& v) const;
 
     inline bool Normalize();
-
+	inline T GetMagnitude() const;
 private:
     CGKTuple<3, T> data_;
 };

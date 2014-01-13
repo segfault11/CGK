@@ -125,3 +125,13 @@ CGKVector3<T> CGKVector3<T>::operator*(const T& a) const
     return result;
 } 
 //------------------------------------------------------------------------------
+template<typename T>
+T CGKVector3<T>::GetMagnitude() const
+{
+	return sqrt( 
+		this->data_[0]*this->data_[0] + 
+		this->data_[1]*this->data_[1] + 
+		this->data_[2]*this->data_[2]
+	);
+}
+//-----------------------------------------------------------------------------

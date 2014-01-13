@@ -26,29 +26,29 @@ const CGKVector4<T>& CGKMatrix4<T>::operator[](unsigned int i) const
 }
 //-----------------------------------------------------------------------------
 template<typename T>
-CGKVector3<T> CGKMatrix4<T>::operator*(const CGKVector3<T>& v)
+CGKVector3<T> CGKMatrix4<T>::operator*(const CGKVector3<T>& v) const
 {
 	T x = data_[0][0]*v[0] + data_[0][1]*v[1] + data_[0][2]*v[2] + data_[0][3];
 	T y = data_[1][0]*v[0] + data_[1][1]*v[1] + data_[1][2]*v[2] + data_[1][3];
 	T z = data_[2][0]*v[0] + data_[2][1]*v[1] + data_[2][2]*v[2] + data_[2][3];
-	T w = data_[3][0]*v[0] + data_[3][1]*v[1] + data_[3][2]*v[2] + data_[2][3];
+	T w = data_[3][0]*v[0] + data_[3][1]*v[1] + data_[3][2]*v[2] + data_[3][3];
 
 	return CGKVector3<T>(x/w, y/w, z/w);
 }
 //-----------------------------------------------------------------------------
 template<typename T>
-CGKVector4<T> CGKMatrix4<T>::operator*(const CGKVector4<T>& v)
+CGKVector4<T> CGKMatrix4<T>::operator*(const CGKVector4<T>& v) const
 {
 	T x = data_[0][0]*v[0] + data_[0][1]*v[1] + data_[0][2]*v[2] + data_[0][3]*v[3];
 	T y = data_[1][0]*v[0] + data_[1][1]*v[1] + data_[1][2]*v[2] + data_[1][3]*v[3];
 	T z = data_[2][0]*v[0] + data_[2][1]*v[1] + data_[2][2]*v[2] + data_[2][3]*v[3];
-	T w = data_[3][0]*v[0] + data_[3][1]*v[1] + data_[3][2]*v[2] + data_[2][3]*v[3];
+	T w = data_[3][0]*v[0] + data_[3][1]*v[1] + data_[3][2]*v[2] + data_[3][3]*v[3];
 
-	return CGKVector3<T>(x, y, z, w);
+	return CGKVector4<T>(x, y, z, w);
 }
 //-----------------------------------------------------------------------------
 template<typename T>
-CGKMatrix4<T> CGKMatrix4<T>::operator*(const CGKMatrix4<T>& m)
+CGKMatrix4<T> CGKMatrix4<T>::operator*(const CGKMatrix4<T>& m) const
 {
 	CGKMatrix4<T> res;
 
