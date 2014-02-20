@@ -44,7 +44,7 @@ static unsigned int matIndex_;
 //------------------------------------------------------------------------------
 //                           PUBLIC DEFINITIONS
 //------------------------------------------------------------------------------
-CGKObjFile* CGKObjLoad(
+CGKObjFile* CGKObjFileLoad(
     const std::string& filename
 )
 {
@@ -91,7 +91,7 @@ CGKObjFile* CGKObjLoad(
     return objFile;
 }
 //------------------------------------------------------------------------------
-void CGKObjRelease(CGKObjFile** file)
+void CGKObjFileRelease(CGKObjFile** file)
 {
     delete *file;
     *file = NULL;

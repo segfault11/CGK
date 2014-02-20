@@ -30,7 +30,7 @@
 #include <vector>
 
 
-    /// Stores the material for each face.
+/// Stores the material for each face.
 class CGKObjMaterial
 {
 public:
@@ -120,12 +120,12 @@ public:
 
 /// Loads an .obj file. Returns NULL if it fails.
 ///
-/// @param filename Filename of the .obj file.
-CGKObjFile* CGKObjLoad(const std::string& filename);
+/// \param filename Filename of the .obj file.
+CGKObjFile* CGKObjFileLoad(const std::string& filename);
 
 /// Releases the .obj file. 
 ///
-/// @param file File to be released.
+/// \param file File to be released.
 void CGKObjFileRelease(CGKObjFile** file);
     
 /// Sets an error handler that handles in the event a line cannot be 
