@@ -2,18 +2,16 @@
 #define VECTOR3_H__
 
 #include <cmath>
+#include <iostream>
 #include "Tuple.h"
 
 template<typename T>
-class CGKVector3
+class CGKVector3 : public CGKTuple<3, T>
 {
 public:
     CGKVector3() {}
     CGKVector3(const T& x, const T& y, const T& z);
     ~CGKVector3() {};
-
-    CGKVector3(const CGKVector3& orig);
-    CGKVector3& operator=(const CGKVector3& orig);
 
     inline operator const T*() const {return data_;}
     inline operator T*() {return data_;}
@@ -38,8 +36,10 @@ public:
 
     inline bool Normalize();
 	inline T GetMagnitude() const;
+    
+    void Dump() const;
 private:
-    CGKTuple<3, T> data_;
+    using CGKTuple<3, T>::data_;
 };
 
 typedef CGKVector3<float> CGKVector3f;

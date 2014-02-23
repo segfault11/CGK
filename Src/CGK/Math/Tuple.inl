@@ -2,10 +2,7 @@
 template<unsigned int DIM, typename TYPE>
 CGKTuple<DIM, TYPE>::CGKTuple()
 {
-    for (unsigned int i = 0; i < DIM; i++)
-    {
-        data_[i] = 0;
-    }
+    memset(this->data_, 0, sizeof(TYPE)*DIM);
 }
 //------------------------------------------------------------------------------
 template<unsigned int DIM, typename TYPE>

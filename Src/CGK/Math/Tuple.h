@@ -22,7 +22,7 @@ public:
     inline const TYPE& operator[](unsigned int i) const;
     inline TYPE& operator[](unsigned int i);
 
-private:
+protected:
     TYPE data_[DIM];
 };
 

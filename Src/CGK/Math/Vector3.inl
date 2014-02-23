@@ -10,19 +10,6 @@ CGKVector3<T>::CGKVector3(const T& x, const T& y, const T& z)
 }
 //------------------------------------------------------------------------------
 template<typename T>
-CGKVector3<T>::CGKVector3(const CGKVector3& orig)
-{
-    data_ = orig.data_;
-}
-//------------------------------------------------------------------------------
-template<typename T>
-CGKVector3<T>& CGKVector3<T>::operator=(const CGKVector3& orig)
-{
-    data_ = orig.data_;
-    return *this;
-}
-//------------------------------------------------------------------------------
-template<typename T>
 T& CGKVector3<T>::operator[](unsigned int i)
 {
 
@@ -135,3 +122,10 @@ T CGKVector3<T>::GetMagnitude() const
 	);
 }
 //-----------------------------------------------------------------------------
+template<typename T>
+void CGKVector3<T>::Dump() const
+{
+    std::cout << "x = " << data_[0] << " y = " << data_[1] << " z = " << data_[2];
+}
+//-----------------------------------------------------------------------------
+

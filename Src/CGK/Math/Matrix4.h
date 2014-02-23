@@ -65,6 +65,12 @@ public:
         const CGKVector3<T>& up
     );
 
+    inline void MakeViewInverse(    
+        const CGKVector3<T>& eye, 
+        const CGKVector3<T>& f,
+        const CGKVector3<T>& up
+    );    
+
     /// Turns the matrix to an OpenGL rotation matrix for the y axis. NOTE 
     /// THAT THE MATRIX IS STILL ROW MAJOR AND NEEDS TO BE TRANSPOSED WHEN 
     /// BEING PASSED TO OPENGL.

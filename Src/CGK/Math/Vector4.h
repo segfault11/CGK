@@ -4,7 +4,7 @@
 #include "Tuple.h"
 
 template<typename T>
-class CGKVector4
+class CGKVector4 : public CGKTuple<4, T>
 {
 public:
     CGKVector4() {}
@@ -32,7 +32,7 @@ public:
     inline const T& GetW() const {return data_[3];}
 
 private:
-    CGKTuple<4, T> data_;
+    using CGKTuple<4, T>::data_;
 };
   
 #include "Vector4.inl" 

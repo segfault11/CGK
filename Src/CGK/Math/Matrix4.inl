@@ -115,7 +115,7 @@ void CGKMatrix4<T>::MakePerspective(
     const T& far
 )
 {
-    T t = tanf((fovy/2.0)*(3.141593f/180.0f));
+    T t = tanf(fovy/2.0);
     T h = near*t;
     T w = h*aspect;
 
@@ -192,6 +192,44 @@ void CGKMatrix4<T>::MakeView(
     raw[15] = 1.0f;
 
     this->Transpose();
+}
+//------------------------------------------------------------------------------
+template<typename T>
+void CGKMatrix4<T>::MakeViewInverse(    
+    const CGKVector3<T>& eye, 
+    const CGKVector3<T>& f,
+    const CGKVector3<T>& up
+)
+{
+    CGKVector3<T> n = eye - f;
+    n.Normalize();
+
+    CGKVector3<T> u = up.Cross(n);
+    u.Normalize();
+
+    CGKVector3<T> v = n.Cross(u);
+
+    T* raw = static_cast<T*>(data_[0]);
+
+    raw[0] = u[0];
+    raw[4] = u[1];
+    raw[8] = u[2];
+    raw[12] = 0;
+
+    raw[1] = v[0];
+    raw[5] = v[1];
+    raw[9] = v[2];
+    raw[13] = 0;   
+
+    raw[2] = n[0];
+    raw[6] = n[1];
+    raw[10] = n[2];
+    raw[14] = 0;   
+
+    raw[3] = eye[0];
+    raw[7] = eye[1];
+    raw[11] = eye[2];
+    raw[15] = 1.0f;
 }
 //------------------------------------------------------------------------------
 template<typename T>
